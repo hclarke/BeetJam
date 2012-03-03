@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: TileManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cd429b46561b4b8ef3773862abf2b, type: 1}
+  m_Name: 
+  tileMap:
+  - NE: 0
+    SE: 0
+    SW: 0
+    NW: 0
+    texture: {fileID: 2800000, guid: 9a9b579a622efa7459a5e6cfd4cdce47, type: 1}
+    rotation: 0
+  - NE: 1
+    SE: 0
+    SW: 0
+    NW: 0
+    texture: {fileID: 2800000, guid: b4dc8e4729195174f8db5d52100d7a13, type: 1}
+    rotation: 0
+  - NE: 1
+    SE: 1
+    SW: 0
+    NW: 0
+    texture: {fileID: 2800000, guid: 998661ba3d929e6428e7098a92c64f5c, type: 1}
+    rotation: 0
+  - NE: 1
+    SE: 0
+    SW: 1
+    NW: 0
+    texture: {fileID: 2800000, guid: 1607942a9739aeb49ac935de94b04d54, type: 1}
+    rotation: 0
+  - NE: 1
+    SE: 1
+    SW: 1
+    NW: 0
+    texture: {fileID: 2800000, guid: 56a7f141a9f842a4c894863c5560e4c2, type: 1}
+    rotation: 0
+  - NE: 1
+    SE: 1
+    SW: 1
+    NW: 1
+    texture: {fileID: 2800000, guid: ad39305a682adf24faf4d8514af320ca, type: 1}
+    rotation: 0
+  - NE: 2
+    SE: 1
+    SW: 1
+    NW: 1
+    texture: {fileID: 2800000, guid: 05e63f076c680f543965683a2e53ce86, type: 1}
+    rotation: 0
+  - NE: 2
+    SE: 2
+    SW: 1
+    NW: 1
+    texture: {fileID: 2800000, guid: 6f88283fd1aa0aa4984d461cfac9d193, type: 1}
+    rotation: 0
+  - NE: 2
+    SE: 1
+    SW: 2
+    NW: 1
+    texture: {fileID: 2800000, guid: 569e0405065cca547a4c44822e0da89b, type: 1}
+    rotation: 0
+  - NE: 2
+    SE: 2
+    SW: 2
+    NW: 1
+    texture: {fileID: 2800000, guid: f498211aae0cde04dbad226f2060e0e2, type: 1}
+    rotation: 0
+  - NE: 2
+    SE: 2
+    SW: 2
+    NW: 2
+    texture: {fileID: 2800000, guid: 117f37ef561f4a64b88a74b6820e2e52, type: 1}
+    rotation: 0
+  tilePrefab: {fileID: 100000, guid: c34ce13cc25a6ae48b9b178a9a3c148b, type: 2}
+  waterPrefab: {fileID: 100000, guid: a2c16927379e1d947a5ef0db07376f39, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

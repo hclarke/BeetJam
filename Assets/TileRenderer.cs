@@ -9,9 +9,29 @@ public class TileRenderer : MonoBehaviour {
     Tile[] tile_map;
 
     public GameObject tilePrefab;
+
+    public GameObject waterPrefab;
     Material base_material;
     Dictionary<Texture2D, Material> materials = new Dictionary<Texture2D, Material>();
     Perlin noise;
+
+    Stack<GameObject> water_pool = new Stack<GameObject>();
+
+    GameObject GetWater() {
+        if (water_pool.Count == 0) {
+            var go = waterPrefab.Duplicate();
+            go.name = waterPrefab.name;
+            return go;
+        }
+        var water = water_pool.Pop();
+        water.SetActiveRecursively(true);
+        return water;
+    }
+
+    void FreeWater(GameObject water) {
+        water_pool.Push(water);
+    }
+
     Material GetMaterial(Texture2D tex ) {
         Material mat;
         if(!materials.TryGetValue(tex, out mat)) {
@@ -35,14 +55,12 @@ public class TileRenderer : MonoBehaviour {
         }
         base_material = tile.GetComponentInChildren<Renderer>().sharedMaterial;
         Destroy(tile);
-        //var tiles = GetTiles(-25,25, -25,25);
-        //Layout(tiles);
     }
 
     List<GameObject> live_tiles = new List<GameObject>();
     
     void Update() {
-        var range = 3;
+        var range = 5;
         var x = Mathf.RoundToInt(transform.position.x);
         var y = Mathf.RoundToInt(transform.position.z);
 
@@ -50,8 +68,17 @@ public class TileRenderer : MonoBehaviour {
             if (!t) continue;
             var tx = Mathf.RoundToInt(t.transform.position.x);
             var ty = Mathf.RoundToInt(t.transform.position.z);
-            if(Mathf.Abs(x-tx) > range || Mathf.Abs(y-ty) > range)
+            if (Mathf.Abs(x - tx) > range || Mathf.Abs(y - ty) > range) {
+                foreach (Transform trans in t.transform) {
+                    var g = trans.gameObject;
+                    if (g.name == waterPrefab.name) {
+                        trans.parent = null;
+                        g.SetActiveRecursively(false);
+                        FreeWater(g);
+                    }
+                }
                 Destroy(t);
+            }
         }
         live_tiles.RemoveAll(t => !t);
 
@@ -108,11 +135,11 @@ public class TileRenderer : MonoBehaviour {
     }
 
     GameObject LayoutTile(int x, int y) {
-        var ts = GetTiles(x - 1, x + 3, y - 1, y + 3);
-        var sw = ts[0,0];//GetTile(x, y);
-        var nw = ts[0,1];//GetTile(x, y + 1);
-        var ne = ts[1,1];//GetTile(x + 1, y + 1);
-        var se = ts[1, 0];//GetTile(x + 1, y + 1);
+        var ts = GetTiles(x - 2, x + 4, y - 2, y + 4);
+        var sw = ts[1,1];//GetTile(x, y);
+        var nw = ts[1,2];//GetTile(x, y + 1);
+        var ne = ts[2,2];//GetTile(x + 1, y + 1);
+        var se = ts[2, 1];//GetTile(x + 1, y + 1);
         var tile = GetTile(ne, se, sw, nw);
 
         return CreateTile(tile, x, y);
@@ -198,7 +225,7 @@ public class TileRenderer : MonoBehaviour {
     }
 
     Transform CreateBox(float x, float y, int rot) {
-        var go = new GameObject("blocker " + rot);
+        
         //go.isStatic = true;
         switch (rot) {
             case 0:
@@ -212,12 +239,11 @@ public class TileRenderer : MonoBehaviour {
             default:
                 Debug.LogError("this isn't good."); break;
         }
+        var go = GetWater();
+
 
         go.transform.position = new Vector3(x, 0, y);
-        var box = go.AddComponent<BoxCollider>();
-        box.center = Vector3.zero;
-        box.size = new Vector3(0.5f, 1, 0.5f);
-        return box.transform;
+        return go.transform;
     }
 
     Tile GetTile(TileType NE, TileType SE, TileType SW, TileType NW) {

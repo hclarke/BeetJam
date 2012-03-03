@@ -1,2 +1,7 @@
 Library/
 Temp/
+obj/
+*.sln
+*.csproj
+*.pidb
+*.suo
