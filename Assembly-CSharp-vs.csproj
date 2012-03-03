@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\Duplicates.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
      <Compile Include="Assets\Scripts\GameGUI.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Swim.cs" />
      <Compile Include="Assets\TileRenderer.cs" />
      <None Include="Assets\Resources\LibNoise.Unity\COPYING.txt" />
