@@ -66,12 +66,12 @@ public class BeetnickAI : MonoBehaviour {
 					 || e.gameObject.GetComponent<FaceMoveControl>() != null)
 			.ToArray();
 		var targetObject = SelectRandom(nearbyObjects);
-		var target = targetObject != null ? targetObject.transform.position : this.transform.position + new Vector3(Random.Range (0, 100),0,Random.Range (0,100));
+		var target = targetObject != null ? targetObject.transform.position : this.transform.position + new Vector3(Random.Range (-100, 100),0,Random.Range (-100,100));
 		var dif = target - this.transform.position;
 		dif = dif.normalized * 50;
 		dif = Quaternion.FromToRotation(new Vector3(1,0,0), new Vector3(1,0,1)) * dif;
 		dst = transform.position + dif;
-		var halfLife = 0.1f + 0.1f * Mathf.Sqrt(nearbyObjects.Length);
+		var halfLife = 10.0f + 5.0f * Mathf.Sqrt(nearbyObjects.Length);
 		dstTimeout = halfLife + Random.Range(0.0f, halfLife);
 	}
 }
