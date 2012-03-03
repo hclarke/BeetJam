@@ -23,7 +23,7 @@ public class Swim : MonoBehaviour {
         var pos = target.position;
         var height = TileRenderer.Height(pos.x, pos.z)+0.02f;
         var depth = Mathf.Min(height * 20f, 0);
-        if (height > 0) {
+        if (count <= 3) {
             movement.swimming = false;
             pos.y = Mathf.SmoothDamp(pos.y, normalHeight, ref velocity, 0.05f);
         }
