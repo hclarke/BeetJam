@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!28 &2800000
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: hammer_color_strip
+  m_Width: 1
+  m_Height: 7
+  m_CompleteImageSize: 28
+  m_TextureFormat: 4
+  m_MipMap: 0
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 28
+  _typelessdata: 000000ff261400ffff883dffffffffff390000ff500000ff5e0000ff

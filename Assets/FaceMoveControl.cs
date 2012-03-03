@@ -8,17 +8,27 @@ public class FaceMoveControl : MonoBehaviour {
 
     public Animation animation;
     public AnimationClip run_clip;
+    public AnimationClip attack;
     public float animationSpeed = 2f;
     public bool swimming = false;
 
 	// Use this for initialization
 	void Start () {
         var state = animation[run_clip.name];
+        var attack_state = animation[attack.name];
+
         state.speed = animationSpeed;
+        attack_state.layer = 999;
 	}
 	
+
+
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (Input.GetButtonDown("Fire1")) {
+            animation.Play(attack.name,PlayMode.StopSameLayer);
+        }
+
 		var dh = Input.GetAxis("Horizontal");
 		var dv = Input.GetAxis("Vertical");
 		
