@@ -2,12 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 public class FaceMoveControl : MonoBehaviour {
-	private const float MAX_SPEED = 10;
-	private const float TURN_SPEED = 0.6f;
+	public float maxSpeed = 10f;
+	public float turnSpeed = 0.6f;
+    public float swimSpeed = 5f;
 
     public Animation animation;
     public AnimationClip run_clip;
     public float animationSpeed = 2f;
+    public bool swimming = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +24,12 @@ public class FaceMoveControl : MonoBehaviour {
 		
 		var d = Vector3.ClampMagnitude(new Vector3(dh, 0, dv), 1);
 		if (d.magnitude > 0) {
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), TURN_SPEED*Time.deltaTime*360);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), turnSpeed*Time.deltaTime*360);
 		}
         var speed = Mathf.Max(0, Vector3.Dot(d, transform.forward));
-		transform.position += Time.deltaTime * MAX_SPEED * transform.forward * speed;
+        if (swimming) speed *= swimSpeed;
+        else speed *= maxSpeed;
+		transform.position += Time.deltaTime * transform.forward * speed;
         animation.Blend(run_clip.name, speed > 0.1f ? 1 : 0);
 	}
 }
