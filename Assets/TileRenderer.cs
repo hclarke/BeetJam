@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using LibNoise.Unity.Generator;
 
 public class TileRenderer : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class TileRenderer : MonoBehaviour {
     public GameObject tilePrefab;
     Material base_material;
     Dictionary<Texture2D, Material> materials = new Dictionary<Texture2D, Material>();
-
+    Perlin noise;
     Material GetMaterial(Texture2D tex ) {
         Material mat;
         if(!materials.TryGetValue(tex, out mat)) {
@@ -21,9 +22,12 @@ public class TileRenderer : MonoBehaviour {
         return mat;
     }
 
+    
     void Start() {
         var tile = Instantiate(tilePrefab) as GameObject;
         tile_map = new Tile[tileMap.Length * 4];
+
+        noise = new LibNoise.Unity.Generator.Perlin(1.0, 2.0, 0.5, 6, Random.Range(int.MinValue, int.MaxValue), LibNoise.Unity.QualityMode.Medium);
         for (int i = 0; i < tileMap.Length; ++i) {
             for (int j = 0; j < 4; ++j) {
                 tile_map[i * 4 + j] = tileMap[i].Rotate(j);
@@ -31,16 +35,100 @@ public class TileRenderer : MonoBehaviour {
         }
         base_material = tile.GetComponentInChildren<Renderer>().sharedMaterial;
         Destroy(tile);
-
-        var tiles = GetTiles(10, 10);
-        Layout(tiles);
+        //var tiles = GetTiles(-25,25, -25,25);
+        //Layout(tiles);
     }
 
-    TileType[,] GetTiles(int width, int height) {
+    List<GameObject> live_tiles = new List<GameObject>();
+    
+    void Update() {
+        var range = 3;
+        var x = Mathf.RoundToInt(transform.position.x);
+        var y = Mathf.RoundToInt(transform.position.z);
+
+        foreach (var t in live_tiles) {
+            if (!t) continue;
+            var tx = Mathf.RoundToInt(t.transform.position.x);
+            var ty = Mathf.RoundToInt(t.transform.position.z);
+            if(Mathf.Abs(x-tx) > range || Mathf.Abs(y-ty) > range)
+                Destroy(t);
+        }
+        live_tiles.RemoveAll(t => !t);
+
+        for (int i = x - range; i <= x + range; ++i) {
+            for (int j = y - range; j <= y + range; ++j) {
+                if (!live_tiles.Any(tile => {
+                    var tx = Mathf.RoundToInt(tile.transform.position.x);
+                    var ty = Mathf.RoundToInt(tile.transform.position.z);
+                    return tx == i && ty == j;
+                })) {
+                    var t = LayoutTile(i, j);
+                    live_tiles.Add(t);
+                }
+            }
+        }
+    }
+
+    float[,] temp_height = new float[3, 3];
+    TileType[,] temp_types = new TileType[3, 3];
+    TileType GetTile(int x, int y) {
+        for (int i = -1; i < 2; ++i) {
+            for (int j = -1; j < 2; ++j) {
+                var posx = x + i;
+                var posy = y + j;
+                temp_height[i+1, j+1] = (float)noise.GetValue(posx * 1f / 20, 0.0, posy * 1f / 20);
+                temp_height[i+1, j+1] = Mathf.Pow(temp_height[i+1, j+1], 2) - 0.05f;
+            }
+        }
+
+        for (int i = -1; i < 2; ++i) {
+            for (int j = -1; j < 2; ++j) {
+                if (temp_height[i+1, j+1] > 0f) temp_types[i+1, j+1] = TileType.Grass;
+                else temp_types[i+1, j+1] = TileType.Water;
+            }
+        }
+
+        if (temp_types[1, 1] == TileType.Grass) {
+            if (
+                IsWater(temp_types, 0, 0) ||
+                IsWater(temp_types, 1, 0) ||
+                IsWater(temp_types, 2, 0) ||
+                IsWater(temp_types, 0, 2) ||
+                IsWater(temp_types, 1, 2) ||
+                IsWater(temp_types, 2, 2) ||
+                IsWater(temp_types, 0, 1) ||
+                IsWater(temp_types, 2, 1)) {
+                temp_types[1, 1] = TileType.Sand;
+            }
+
+        }
+
+        return temp_types[1, 1];
+
+    }
+
+    GameObject LayoutTile(int x, int y) {
+        var ts = GetTiles(x - 1, x + 3, y - 1, y + 3);
+        var sw = ts[0,0];//GetTile(x, y);
+        var nw = ts[0,1];//GetTile(x, y + 1);
+        var ne = ts[1,1];//GetTile(x + 1, y + 1);
+        var se = ts[1, 0];//GetTile(x + 1, y + 1);
+        var tile = GetTile(ne, se, sw, nw);
+
+        return CreateTile(tile, x, y);
+    }
+
+    TileType[,] GetTiles(int xmin, int xmax, int ymin, int ymax) {
+        var width = xmax - xmin;
+        var height = ymax - ymin;
         var heights = new float[width,height];
+       
         for(int i = 0; i < width; ++i) {
             for(int j = 0; j < height; ++j) {
-                heights[i, j] = Mathf.PerlinNoise(i * 1f / width, j * 1f / height) * 2 - 0.5f;
+                var x = xmin + i;
+                var y = ymin + j;
+                heights[i, j] = (float)noise.GetValue(x * 1f / 20, 0.0, y * 1f / 20);
+                heights[i, j] = Mathf.Pow(heights[i, j], 2) - 0.05f;
             }
         }
         //heights[1, 1] = -1f;
@@ -96,19 +184,22 @@ public class TileRenderer : MonoBehaviour {
         }
     }
 
-    void CreateTile(Tile t, int x, int y) {
+    GameObject CreateTile(Tile t, int x, int y) {
         var rot = Quaternion.AngleAxis(t.rotation * 90, Vector3.up);
         var tile = Instantiate(tilePrefab, new Vector3(x, 0, y), rot) as GameObject;
+        //tile.isStatic = true;
         tile.GetComponentInChildren<Renderer>().material = GetMaterial(t.texture);
-        tile.transform.parent = transform;
+        //tile.transform.parent = transform;
         if (t.NE == TileType.Water) CreateBox(x, y, 0).parent = tile.transform;
         if (t.SE == TileType.Water) CreateBox(x, y, 1).parent = tile.transform;
         if (t.SW == TileType.Water) CreateBox(x, y, 2).parent = tile.transform;
         if (t.NW == TileType.Water) CreateBox(x, y, 3).parent = tile.transform;
+        return tile;
     }
 
     Transform CreateBox(float x, float y, int rot) {
         var go = new GameObject("blocker " + rot);
+        //go.isStatic = true;
         switch (rot) {
             case 0:
                 x += 0.25f; y += 0.25f;break;
