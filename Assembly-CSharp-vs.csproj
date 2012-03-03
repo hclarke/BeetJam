@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BeetnickAI.cs" />
      <Compile Include="Assets\Demo.cs" />
      <Compile Include="Assets\FaceMoveControl.cs" />
      <Compile Include="Assets\Hero_Parts\CreateStuff.cs" />
