@@ -13,10 +13,15 @@ public class TileRenderer : MonoBehaviour {
     public GameObject waterPrefab;
     Material base_material;
     Dictionary<Texture2D, Material> materials = new Dictionary<Texture2D, Material>();
-    Perlin noise;
+    static Perlin noise;
 
     Stack<GameObject> water_pool = new Stack<GameObject>();
 
+    public static float Height(float x, float y) {
+        var val = (float)noise.GetValue(new Vector3(x/20f, 0f, y/20f));
+        val = Mathf.Pow(val, 2) - 0.05f;
+        return val;
+    }
     GameObject GetWater() {
         if (water_pool.Count == 0) {
             var go = waterPrefab.Duplicate();
@@ -103,8 +108,9 @@ public class TileRenderer : MonoBehaviour {
             for (int j = -1; j < 2; ++j) {
                 var posx = x + i;
                 var posy = y + j;
-                temp_height[i+1, j+1] = (float)noise.GetValue(posx * 1f / 20, 0.0, posy * 1f / 20);
-                temp_height[i+1, j+1] = Mathf.Pow(temp_height[i+1, j+1], 2) - 0.05f;
+                //temp_height[i+1, j+1] = (float)noise.GetValue(posx * 1f / 20, 0.0, posy * 1f / 20);
+                //temp_height[i+1, j+1] = Mathf.Pow(temp_height[i+1, j+1], 2) - 0.05f;
+                temp_height[i + 1, j + 1] = Height(posx, posy);
             }
         }
 
