@@ -8,10 +8,10 @@ public class Mr_Beet_AI : MonoBehaviour {
 	float? dstTimeout = null;
 	public AudioClip RoarSound;
 	private bool roarActivated = false;
-	private const float RUN_SPEED = 2.0f;
+	private const float RUN_SPEED = 1.0f;
 	private const float WALK_SPEED = 0.01f;
 	private const float TURN_SPEED = 0.5f;
-	private const float SEARCH_RADIUS = 5.0f;
+	private const float SEARCH_RADIUS = 8.0f;
 	private const float ROAR_RADIUS = 20.0f;
     public AnimationClip run_clip;
 	
@@ -30,7 +30,7 @@ public class Mr_Beet_AI : MonoBehaviour {
         
 		var speed = roarActivated ? RUN_SPEED : WALK_SPEED;
 		var dist = Time.deltaTime * speed * Mathf.Max(0, Vector3.Dot(d, transform.forward));
-		if (d.magnitude < dist) {
+		if (d.magnitude <= dist) {
 			transform.position = dst.Value;
 			dst = null;
 		} else {
@@ -47,17 +47,19 @@ public class Mr_Beet_AI : MonoBehaviour {
 		}
 	}
 	
-	private void Roar(Vector3 target) {
+	private void Roar(Vector3 target, int steps) {
 		if (this.roarActivated) return;
 		this.roarActivated = true;
 		
 		//spread roar
-		this.audio.PlayOneShot(this.RoarSound);
-		var nearbyOthers = Physics.OverlapSphere(this.transform.position, ROAR_RADIUS)
-			.Select(e => e.gameObject.GetComponent<Mr_Beet_AI>())
-			.Where(e => e != null);
-		foreach (var e in nearbyOthers)
-			e.Roar(target);
+		if (steps > 0) {
+			this.audio.PlayOneShot(this.RoarSound);
+			var nearbyOthers = Physics.OverlapSphere(this.transform.position, ROAR_RADIUS)
+				.Select(e => e.gameObject.GetComponent<Mr_Beet_AI>())
+				.Where(e => e != null);
+			foreach (var e in nearbyOthers)
+				e.Roar(target, steps - 1);
+		}
 		
 		//head towards target
 		dst = target;
@@ -66,7 +68,6 @@ public class Mr_Beet_AI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.animation.Blend(run_clip.name, 1);
 		WalkTorwardDst();
 		
 		if (dst != null) return;
@@ -75,7 +76,7 @@ public class Mr_Beet_AI : MonoBehaviour {
 			.Where(e => e.gameObject.GetComponent<FaceMoveControl>() != null)
 			.SingleOrDefault();
 		if (nearbyHero != null) {
-			Roar(nearbyHero.transform.position);
+			Roar(nearbyHero.transform.position, 1);
 		} else {
 			var halfLife = 0.1f;
 			dst = this.transform.position + new Vector3(Random.Range (-100, 100),0,Random.Range (-100,100));

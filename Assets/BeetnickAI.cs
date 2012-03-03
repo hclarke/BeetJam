@@ -7,7 +7,7 @@ public class BeetnickAI : MonoBehaviour {
 	Vector3? dst = null;
 	float? dstTimeout = null;
 	private const float WALK_SPEED = 0.05f;
-	private const float TURN_SPEED = 0.5f;
+	private const float TURN_SPEED = 0.4f;
 	private const float SEARCH_RADIUS = 20.0f;
 
 	// Use this for initialization
@@ -23,8 +23,8 @@ public class BeetnickAI : MonoBehaviour {
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), TURN_SPEED*Time.deltaTime*360);
 		}
         
-		var dist = Time.deltaTime * WALK_SPEED * Mathf.Max(0, Vector3.Dot(d, transform.forward));
-		if (d.magnitude < dist) {
+		var dist = Time.deltaTime * WALK_SPEED * d.magnitude;
+		if (d.magnitude <= dist) {
 			transform.position = dst.Value;
 			dst = null;
 		} else {
@@ -68,10 +68,11 @@ public class BeetnickAI : MonoBehaviour {
 		var targetObject = SelectRandom(nearbyObjects);
 		var target = targetObject != null ? targetObject.transform.position : this.transform.position + new Vector3(Random.Range (-100, 100),0,Random.Range (-100,100));
 		var dif = target - this.transform.position;
+		dif -= Vector3.Project(dif, Vector3.up);
 		dif = dif.normalized * 50;
 		dif = Quaternion.FromToRotation(new Vector3(1,0,0), new Vector3(1,0,1)) * dif;
 		dst = transform.position + dif;
-		var halfLife = 10.0f + 5.0f * Mathf.Sqrt(nearbyObjects.Length);
+		var halfLife = 0.2f + 0.2f * Mathf.Sqrt(nearbyObjects.Length);
 		dstTimeout = halfLife + Random.Range(0.0f, halfLife);
 	}
 }
