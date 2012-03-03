@@ -6,9 +6,9 @@ using System.Linq;
 public class BeetnickAI : MonoBehaviour {
 	Vector3? dst = null;
 	float? dstTimeout = null;
-	private const float WALK_SPEED = 0.01f;
-	private const float TURN_SPEED = 0.1f;
-	private const float SEARCH_RADIUS = 50.0f;
+	private const float WALK_SPEED = 0.05f;
+	private const float TURN_SPEED = 0.5f;
+	private const float SEARCH_RADIUS = 20.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +40,10 @@ public class BeetnickAI : MonoBehaviour {
 		}
 	}
 	
+	/// <summary>
+	/// Returns a random item from the given sequence.
+	/// Each item in the sequence has an equal probability of being returned.
+	/// </summary>
 	T SelectRandom<T>(IEnumerable<T> items) {
 		var result = default(T);
 		var n = 0;
@@ -56,15 +60,18 @@ public class BeetnickAI : MonoBehaviour {
 		
 		if (dst != null) return;
 		
-		var nearbyObjects = Physics.OverlapSphere(this.transform.position, SEARCH_RADIUS);
-		var nearbyBeetnicks = nearbyObjects.Where(e => e.gameObject.GetComponent<BeetnickAI>() != null && e.gameObject != this.gameObject);
-		var targetBeetnick = SelectRandom(nearbyBeetnicks);
-		if (targetBeetnick != null) {
-			var dif = targetBeetnick.transform.position - this.transform.position;
-			dif = dif.normalized * 50;
-			dif = Quaternion.FromToRotation(new Vector3(1,0,0), new Vector3(1,0,1)) * dif;
-			dst = transform.position + dif;
-			dstTimeout = 3.0f;
-		}
+		var nearbyObjects = Physics.OverlapSphere(this.transform.position, SEARCH_RADIUS)
+			.Where(e => e.gameObject != this.gameObject)
+			.Where(e => e.gameObject.GetComponent<BeetnickAI>() != null 
+					 || e.gameObject.GetComponent<FaceMoveControl>() != null)
+			.ToArray();
+		var targetObject = SelectRandom(nearbyObjects);
+		var target = targetObject != null ? targetObject.transform.position : this.transform.position + new Vector3(Random.Range (0, 100),0,Random.Range (0,100));
+		var dif = target - this.transform.position;
+		dif = dif.normalized * 50;
+		dif = Quaternion.FromToRotation(new Vector3(1,0,0), new Vector3(1,0,1)) * dif;
+		dst = transform.position + dif;
+		var halfLife = 0.1f + 0.1f * Mathf.Sqrt(nearbyObjects.Length);
+		dstTimeout = halfLife + Random.Range(0.0f, halfLife);
 	}
 }
