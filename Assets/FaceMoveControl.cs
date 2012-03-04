@@ -32,7 +32,8 @@ public class FaceMoveControl : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
+    [HideInInspector]
+    public float lastSpeed;
 	void FixedUpdate () {
         if (Input.GetButtonDown("Fire1")) {
             animation.Play(attack.name,PlayMode.StopSameLayer);
@@ -51,5 +52,7 @@ public class FaceMoveControl : MonoBehaviour {
         else speed *= maxSpeed;
 		transform.position += Time.deltaTime * transform.forward * speed;
         animation.Blend(run_clip.name, speed > 0.1f ? 1 : 0);
+
+        lastSpeed = speed / maxSpeed;
 	}
 }
