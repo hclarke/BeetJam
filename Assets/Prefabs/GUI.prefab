@@ -65,8 +65,8 @@ MonoBehaviour:
       y: 84
       width: 64
       height: 16
-  health: 11
-  killCount: 8
+  health: 4
+  killCount: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
