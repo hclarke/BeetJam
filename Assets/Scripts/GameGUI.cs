@@ -5,12 +5,14 @@ using System.Collections.Generic;
 public class GameGUI : MonoBehaviour {
 
     public Texture[] healthIcons;
-    public Rect healthRect;
+    public Rect healthRect0;
+    public float healthPadding = 10;
 
     public GUIKillCount[] killCounters;
     public int health;
-
+    public int healthJars;
     public static GameGUI instance;
+    public GameObject deathPrefab;
 
     Dictionary<string, int> killCounts = new Dictionary<string, int>();
 
@@ -18,11 +20,16 @@ public class GameGUI : MonoBehaviour {
         instance = this;
     }
 
-    public void Hurt() {
-        health--;
+    public void Hurt(int amount) {
+        health -= amount;
         if (health <= 0) {
             Die();
         }
+    }
+
+    public void Heal(int amount) {
+        health += amount;
+        if (health > healthJars * 4) health = healthJars * 4;
     }
 
     
@@ -35,16 +42,23 @@ public class GameGUI : MonoBehaviour {
 
     void Die() {
         var obj = FaceMoveControl.instance;
-        if(obj)
+        if (obj) {
+            deathPrefab.Duplicate(obj.transform.position, obj.transform.rotation);
             Destroy(obj.gameObject);
+        }
     }
     void OnGUI() {
         var style = new GUIStyle();
         style.alignment = TextAnchor.MiddleCenter;
         if (Event.current.type != EventType.repaint) return;
         //draw health
-        var healthTex = healthIcons[Mathf.Clamp(health, 0, healthIcons.Length-1)];
-        GUI.DrawTexture(healthRect, healthTex, ScaleMode.ScaleToFit, true);
+        for (int i = 0; i < healthJars; ++i) {
+            var healthRect = healthRect0;
+            healthRect.x += (healthRect0.width + healthPadding) * i;
+            var hp = health - 4 * i;
+            var healthTex = healthIcons[Mathf.Clamp(hp, 0, healthIcons.Length - 1)];
+            GUI.DrawTexture(healthRect, healthTex, ScaleMode.ScaleToFit, true);
+        }
 
         foreach (var counter in killCounters) {
             int count;
