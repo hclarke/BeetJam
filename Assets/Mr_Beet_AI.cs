@@ -11,8 +11,8 @@ public class Mr_Beet_AI : MonoBehaviour {
 	private const float RUN_SPEED = 1.0f;
 	private const float WALK_SPEED = 0.01f;
 	private const float TURN_SPEED = 0.5f;
-	private const float SEARCH_RADIUS = 8.0f;
-	private const float ROAR_RADIUS = 20.0f;
+	private const float SEARCH_RADIUS = 0.5f;
+	private const float ROAR_RADIUS = 8.0f;
     public AnimationClip run_clip;
 
 	
