@@ -277,7 +277,7 @@ ParticleSystem:
   ShapeModule:
     enabled: 1
     type: 0
-    radius: .201342881
+    radius: .00999999978
     angle: 25
     boxX: 1
     boxY: 1
