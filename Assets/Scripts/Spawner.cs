@@ -7,10 +7,14 @@ public class Spawner : MonoBehaviour {
     public SpawnInfo[] spawnables;
     public int spawnRadius = 7;
     public int despawnRadius = 10;
+    public float magic = 0.6f;
+    public float moreMagic = 0.15f;
 
     List<SpawnData> spawned = new List<SpawnData>();
     Perlin noise;
     Dictionary<int, HashSet<int>> killed = new Dictionary<int, HashSet<int>>();
+
+    float totalWeight;
     void AddKilled(int x, int y) {
         HashSet<int> set;
         if (!killed.TryGetValue(x, out set)) {
@@ -30,13 +34,14 @@ public class Spawner : MonoBehaviour {
 
     float Height(float x, float y) {
         var h = TileRenderer.Height(x, y);
-        var g = (float)noise.GetValue(new Vector3(x/2, 0, y/2));
+        var g = (float)noise.GetValue(new Vector3(x*moreMagic, 0, y*moreMagic));
         g = Mathf.Abs(g);
         if (h <= 0) return 0f;
         return g;
     }
     void Start() {
         noise = new Perlin(1.0, 2.0, 0.5, 6, Random.Range(int.MinValue, int.MaxValue), LibNoise.Unity.QualityMode.Medium);
+        totalWeight = spawnables.Sum(s => s.weight);
     }
     public void Update() {
         var x = Mathf.RoundToInt(transform.position.x);
@@ -77,10 +82,14 @@ public class Spawner : MonoBehaviour {
     }
 
     SpawnInfo GetSpawnType(float height) {
-        if (height < 0.6f) return null;
-        var rand = ((int)(height * 10000)) % spawnables.Length;
+        if (height < magic) return null;
+        var rand = Mathf.Repeat(height * 5000, totalWeight);
+        foreach (var s in spawnables) {
+            if (rand <= s.weight) return s;
+            rand -= s.weight;
+        }
 
-        return spawnables[rand];
+        throw new System.Exception("that's broken");
     }
 
     struct SpawnData {
@@ -98,4 +107,5 @@ public class Spawner : MonoBehaviour {
 [System.Serializable]
 public class SpawnInfo {
     public GameObject prefab;
+    public float weight = 1f;
 }
