@@ -3,19 +3,19 @@ using System.Collections;
 
 public class Follow : MonoBehaviour {
     public FaceMoveControl target;
-	private const float MIN_CAMERA_HEIGHT = 10.0f;
-	private const float MAX_CAMERA_HEIGHT = 100.0f;
-	private const float BASE_LEAD_DISTANCE = 0.2f;
-	private const float LEAD_PROJECTION_TIME = 4.0f;
-	private const float HEIGHT_PER_LEAD_DISTANCE = 15.0f;
+	public float MIN_CAMERA_HEIGHT = 10.0f;
+	public float MAX_CAMERA_HEIGHT = 100.0f;
+	public float BASE_LEAD_DISTANCE = 0.2f;
+	public float LEAD_PROJECTION_TIME = 4.0f;
+	public float HEIGHT_PER_LEAD_DISTANCE = 15.0f;
 	
 	private Vector3 lastTargetPos;
 	private Vector3 lastCameraPos;
 	private float targetSpeedApprox;
 	private Vector3 cameraVelApprox;
-	private const float TARGET_VEL_APPROX_RATE = 0.7f;
-	private const float CAMERA_VEL_APPROX_RATE = 0.95f;
-	private const float CAMERA_POS_APPROX_RATE = 0.8f;
+	public float TARGET_VEL_APPROX_RATE = 0.7f;
+	public float CAMERA_VEL_APPROX_RATE = 0.95f;
+	public float CAMERA_POS_APPROX_RATE = 0.8f;
 
     void Start() {
 		lastTargetPos = target.transform.position;
