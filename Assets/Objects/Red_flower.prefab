@@ -110,8 +110,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3, y: 6, z: 3}
+  m_Center: {x: 0, y: 1.96000004, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,13 +122,14 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8109e41c4f99e6741ba9d19b179c2708, type: 1}
   m_Name: 
+  hits: 0
   tags:
   - plant
   - red_flower
   death_becomes_you: {fileID: 0}
   more_death_becomes_you:
-  - prefab: {fileID: 100000, guid: e2bc6f21b280efc40b0f0b0c32b8c4cd, type: 2}
-    probability: .5
+  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
+    probability: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
