@@ -10,6 +10,23 @@ public class Spawner : MonoBehaviour {
 
     List<SpawnData> spawned = new List<SpawnData>();
     Perlin noise;
+    Dictionary<int, HashSet<int>> killed = new Dictionary<int, HashSet<int>>();
+    void AddKilled(int x, int y) {
+        HashSet<int> set;
+        if (!killed.TryGetValue(x, out set)) {
+            set = new HashSet<int>();
+            killed[x] = set;
+        }
+        set.Add(y);
+    }
+
+    bool WasKilled(int x, int y) {
+        HashSet<int> set;
+        if (killed.TryGetValue(x, out set)) {
+            return set.Contains(y);
+        }
+        return false;
+    }
 
     float Height(float x, float y) {
         var h = TileRenderer.Height(x, y);
@@ -35,6 +52,7 @@ public class Spawner : MonoBehaviour {
         spawned.RemoveAll(s => {
             var d = s.Dist(x, y);
             if (d > despawnRadius) {
+                if (!s.obj) AddKilled(s.x, s.y);
                 Destroy(s.obj);
                 return true;
             }
@@ -43,7 +61,7 @@ public class Spawner : MonoBehaviour {
     }
 
     void TrySpawn(int x, int y) {
-
+        if (WasKilled(x, y)) return;
         if (spawned.Any(s => s.x == x && s.y == y)) return;
 
         var h = Height(x, y);
@@ -71,6 +89,7 @@ public class Spawner : MonoBehaviour {
 
         public int Dist(int xpos, int ypos) {
             var d0 = Mathf.Abs(xpos - x) + Mathf.Abs(ypos - y);
+            if (!obj) return d0;
             var d1 = Mathf.Abs(xpos - obj.transform.position.x) + Mathf.Abs(ypos - obj.transform.position.y);
             return Mathf.Min(d0, (int)d1);
         }
