@@ -9,6 +9,7 @@ public class FaceMoveControl : MonoBehaviour {
     public Animation animation;
     public AnimationClip run_clip;
     public AnimationClip attack;
+    public AnimationClip idle;
     public float animationSpeed = 2f;
     public bool swimming = false;
     public static bool swinging;
@@ -16,15 +17,23 @@ public class FaceMoveControl : MonoBehaviour {
 
     public static FaceMoveControl instance;
 
+    AnimationState runState;
+    AnimationState attackState;
 	// Use this for initialization
 	void Start () {
         instance = this;
-        var state = animation[run_clip.name];
-        var attack_state = animation[attack.name];
+        runState = animation[run_clip.name];
+        attackState = animation[attack.name];
 
-        state.speed = animationSpeed;
-        attack_state.layer = 999;
-        attack_state.speed = 2f;
+        runState.enabled = true;
+        runState.speed = 0f;
+        runState.weight = 0f;
+
+        runState.layer = 1;
+
+        runState.speed = animationSpeed;
+        attackState.layer = 999;
+        attackState.speed = 2f;
 	}
 
     void Update() {
@@ -38,6 +47,8 @@ public class FaceMoveControl : MonoBehaviour {
 
     [HideInInspector]
     public float lastSpeed;
+
+    float idlev;
 	void FixedUpdate () {
         if (Input.GetButtonDown("Fire1")) {
             animation.Play(attack.name,PlayMode.StopSameLayer);
@@ -58,5 +69,15 @@ public class FaceMoveControl : MonoBehaviour {
         animation.Blend(run_clip.name, speed > 0.1f ? 1 : 0);
 
         lastSpeed = speed / maxSpeed;
+
+        runState.speed = lastSpeed * animationSpeed;
+        runState.weight = lastSpeed;
+        if (lastSpeed < 0.3f) {
+            runState.weight = 0f;
+            animation.Blend(idle.name, 1, 1);
+        }
+        else {
+            animation.Blend(idle.name, 0, 0.05f);
+        }
 	}
 }
