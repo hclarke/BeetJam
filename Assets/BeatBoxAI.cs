@@ -12,6 +12,7 @@ public class BeatBoxAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        if (!FaceMoveControl.instance) return;
         var pos = FaceMoveControl.instance.transform.position;
         bool close = Vector3.Distance(pos, transform.position) < RAM_SPEED * RAM_TIME * 0.7f;
         if (!inRange && close) {
@@ -21,7 +22,7 @@ public class BeatBoxAI : MonoBehaviour {
         else if (!close) {
             inRange = false;
         }
-
+        pos = transform.position;
 		if (unburrowedTime <= 0) {
 			pos = new Vector3(transform.position.x, BURROWED_HEIGHT, transform.position.z);
 		} else {

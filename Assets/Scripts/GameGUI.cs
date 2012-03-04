@@ -34,8 +34,9 @@ public class GameGUI : MonoBehaviour {
     }
 
     void Die() {
-        //TODO:kill player
-        Debug.Log("KILLED!");
+        var obj = FaceMoveControl.instance;
+        if(obj)
+            Destroy(obj.gameObject);
     }
     void OnGUI() {
         var style = new GUIStyle();

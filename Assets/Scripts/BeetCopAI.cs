@@ -32,18 +32,21 @@ public class BeetCopAI : MonoBehaviour {
     }
 
     public void Shoot() {
+        if (!FaceMoveControl.instance) return;
         var pos = FaceMoveControl.instance.transform.position;
         var rot = Quaternion.LookRotation(pos - transform.position, Vector3.up);
         bulletPrefab.Duplicate(gun.position, rot);
     }
 
     void Update() {
+        if (!FaceMoveControl.instance) return;
         var pos = FaceMoveControl.instance.transform.position;
         var rot = Quaternion.LookRotation(pos - transform.position, Vector3.up);
         transform.rotation = rot;
     }
 
     float DistToPlayer() {
+        if (!FaceMoveControl.instance) return Mathf.Infinity;
         return Vector3.Distance(FaceMoveControl.instance.transform.position, transform.position);
     }
 

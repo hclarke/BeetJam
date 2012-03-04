@@ -31,6 +31,7 @@ public class Follow : MonoBehaviour {
 	}
 		
 	void LateUpdate () {
+        if (!FaceMoveControl.instance) return;
 		// keep an exponentially converging approximation of the target's speed
 		var curTargetPos = target.transform.position;
 		var targetVel = (curTargetPos - lastTargetPos) / Time.deltaTime / 10;

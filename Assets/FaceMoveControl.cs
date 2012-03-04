@@ -37,22 +37,26 @@ public class FaceMoveControl : MonoBehaviour {
 	}
 
     void Update() {
+        if (Input.GetButtonDown("Fire1")) {
+            animation.Play(attack.name, PlayMode.StopSameLayer);
+        }
+
         if (animation.IsPlaying(attack.name)) {
             swinging = true;
         }
         else {
             swinging = false;
         }
+        
     }
 
     [HideInInspector]
     public float lastSpeed;
 
     float idlev;
+
 	void FixedUpdate () {
-        if (Input.GetButtonDown("Fire1")) {
-            animation.Play(attack.name,PlayMode.StopSameLayer);
-        }
+        
 
 		var dh = Input.GetAxis("Horizontal");
 		var dv = Input.GetAxis("Vertical");
