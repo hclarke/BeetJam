@@ -48,6 +48,7 @@
      <Compile Include="Assets\BeetnickAI.cs" />
      <Compile Include="Assets\Demo.cs" />
      <Compile Include="Assets\FaceMoveControl.cs" />
+     <Compile Include="Assets\HammerAttack.cs" />
      <Compile Include="Assets\Hero_Parts\CreateStuff.cs" />
      <Compile Include="Assets\Mr_Beet_AI.cs" />
      <Compile Include="Assets\Resources\LibNoise.Unity\Generator\Billow.cs" />
