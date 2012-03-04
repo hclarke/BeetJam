@@ -700,6 +700,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4804df2f04899204ab3ce8dcd2f53c1f, type: 2}
+      propertyPath: healthJars
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4804df2f04899204ab3ce8dcd2f53c1f, type: 2}
   m_RootGameObject: {fileID: 1125601019}

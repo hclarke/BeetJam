@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
   m_Layer: 0
-  m_Name: Juice
+  m_Name: EmptyBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e1c170afa6a66d04a9787c2fa27b6ce0, type: 2}
+  - {fileID: 2100000, guid: b88e47ef99c9ce14dbb02ae022e9e6e4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -203,10 +203,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c193c193764a7ef41910231a61d5b188, type: 1}
+  m_Script: {fileID: 11500000, guid: c5fbdebdbcae4844ca76ee6ee4adaec0, type: 1}
   m_Name: 
-  amount: 4
-  destroy: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
