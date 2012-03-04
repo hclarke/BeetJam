@@ -127,8 +127,8 @@ MonoBehaviour:
   - red_flower
   death_becomes_you: {fileID: 0}
   more_death_becomes_you:
-  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
-    probability: .699999988
+  - prefab: {fileID: 100000, guid: e2bc6f21b280efc40b0f0b0c32b8c4cd, type: 2}
+    probability: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

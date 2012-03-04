@@ -252,6 +252,9 @@ MonoBehaviour:
   - beet
   - beetcop
   death_becomes_you: {fileID: 400000, guid: 2d40df00579e46f4db30c120465b63ba, type: 2}
+  more_death_becomes_you:
+  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
+    probability: .200000003
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +265,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f265ce422a268e4da57828fabe1b5d7, type: 1}
   m_Name: 
+  hearts: 4
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
