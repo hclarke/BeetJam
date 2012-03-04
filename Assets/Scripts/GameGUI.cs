@@ -16,6 +16,15 @@ public class GameGUI : MonoBehaviour {
 
     Dictionary<string, int> killCounts = new Dictionary<string, int>();
 
+
+    public void AddBottle() {
+        if (healthJars >= 10) return;
+        healthJars++;
+    }
+
+    void Win() {
+        //TODO: here goes victory
+    }
     void Awake() {
         instance = this;
     }
@@ -30,6 +39,7 @@ public class GameGUI : MonoBehaviour {
     public void Heal(int amount) {
         health += amount;
         if (health > healthJars * 4) health = healthJars * 4;
+        if (health == 40) Win();
     }
 
     
