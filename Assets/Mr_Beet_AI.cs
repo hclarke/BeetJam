@@ -23,6 +23,7 @@ public class Mr_Beet_AI : MonoBehaviour {
 		if (d.magnitude > 0) {
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), TURN_SPEED*Time.deltaTime*360);
 		}
+        d.Normalize();
         
 		var speed = roarActivated ? RUN_SPEED : WALK_SPEED;
 		var dist = Time.deltaTime * speed * Mathf.Max(0, Vector3.Dot(d, transform.forward));

@@ -11,6 +11,23 @@ public class GameGUI : MonoBehaviour {
     public int health;
     public int killCount;
 
+    public static GameGUI instance;
+
+    void Awake() {
+        instance = this;
+    }
+
+    public void Hurt() {
+        health--;
+        if (health <= 0) {
+            Die();
+        }
+    }
+
+    void Die() {
+        //TODO:kill player
+        Debug.Log("KILLED!");
+    }
     void OnGUI() {
         var style = new GUIStyle();
         style.alignment = TextAnchor.MiddleCenter;
