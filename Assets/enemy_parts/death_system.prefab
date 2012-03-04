@@ -23,10 +23,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.80928135, y: 104.526199, z: 47.915802}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!198 &19800000
@@ -36,7 +36,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   lengthInSec: .949999988
-  startDelay: .439999998
+  startDelay: 0
   speed: 1
   randomSeed: 0
   looping: 0
@@ -79,7 +79,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1.01999998
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -271,25 +271,25 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    gravityModifier: -5.71000004
+    gravityModifier: 1
     inheritVelocity: 0
-    maxNumParticles: 100
+    maxNumParticles: 300
   ShapeModule:
     enabled: 1
-    type: 6
-    radius: 1
+    type: 0
+    radius: .201342881
     angle: 25
     boxX: 1
     boxY: 1
     boxZ: 1
-    placementMode: 1
+    placementMode: 2
     m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     randomDirection: 0
   EmissionModule:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 138.5
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -321,7 +321,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 30
+    cnt0: 100
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -632,7 +632,7 @@ ParticleSystem:
   ForceModule:
     enabled: 1
     x:
-      scalar: .5
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -665,7 +665,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: 4.34000015
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -735,7 +735,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 1
     x:
-      scalar: .0500000007
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -768,7 +768,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: 5.26000023
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -801,7 +801,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     z:
-      scalar: 0
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -834,7 +834,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     magnitude:
-      scalar: 15.3100004
+      scalar: 2.54999995
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -867,7 +867,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     separateAxis: 1
-    dampen: 0
+    dampen: 1
   SizeBySpeedModule:
     enabled: 0
     curve:
@@ -1048,7 +1048,7 @@ ParticleSystem:
     plane5: {fileID: 0}
     dampen: 0
     bounce: 2
-    energyLossOnCollision: 1
+    energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
     enabled: 0
