@@ -22,10 +22,11 @@ public class GameGUI : MonoBehaviour {
         if (healthJars >= 10) return;
         healthJars++;
     }
-
+    bool godMode = false;
     bool won;
     void Win() {
         if (won) return;
+        godMode = true;
         won = true;
         winPrefab.Duplicate(FaceMoveControl.instance.transform.position);
     }
@@ -34,6 +35,7 @@ public class GameGUI : MonoBehaviour {
     }
 
     public void Hurt(int amount) {
+        if (godMode) return;
         health -= amount;
         if (health <= 0) {
             Die();
@@ -61,6 +63,7 @@ public class GameGUI : MonoBehaviour {
             Destroy(obj.gameObject);
         }
     }
+    
     void OnGUI() {
         var style = new GUIStyle();
         style.alignment = TextAnchor.MiddleCenter;

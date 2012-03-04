@@ -40,9 +40,8 @@ public class BeetnickAI : MonoBehaviour {
 			}
 		}
 
-        var posx = Mathf.RoundToInt(pos.x - 0.5f);
-        var posy = Mathf.RoundToInt(pos.z - 0.5f);
-        if (TileRenderer.Height(posx, posy) > 0.01f) {
+        var destOnWater = TileRenderer.OnWaterTile(pos.x, pos.z);
+        if (!destOnWater) {
             transform.position = pos;
         }
 	}

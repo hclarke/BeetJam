@@ -24,15 +24,15 @@ public class BeatBoxAI : MonoBehaviour {
         }
         pos = transform.position;
 		if (unburrowedTime <= 0) {
-			pos = new Vector3(transform.position.x, BURROWED_HEIGHT, transform.position.z);
+			transform.position = new Vector3(transform.position.x, BURROWED_HEIGHT, transform.position.z);
+            return;
 		} else {
 			pos += transform.forward * RAM_SPEED * Time.deltaTime;
 			unburrowedTime -= Time.deltaTime;
 		}
 
-        var posx = Mathf.RoundToInt(pos.x - 0.5f);
-        var posy = Mathf.RoundToInt(pos.z - 0.5f);
-        if (TileRenderer.Height(posx, posy) > 0.01f) {
+        var destOnWater = TileRenderer.OnWaterTile(pos.x, pos.z);
+        if (!destOnWater) {
             transform.position = pos;
         }
 	}

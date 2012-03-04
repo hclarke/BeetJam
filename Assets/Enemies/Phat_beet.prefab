@@ -558,7 +558,15 @@ MonoBehaviour:
   hits: 2
   tags: []
   death_becomes_you: {fileID: 400000, guid: 2d40df00579e46f4db30c120465b63ba, type: 2}
-  more_death_becomes_you: []
+  more_death_becomes_you:
+  - prefab: {fileID: 100000, guid: e2bc6f21b280efc40b0f0b0c32b8c4cd, type: 2}
+    probability: 1
+  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
+    probability: .400000006
+  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
+    probability: .400000006
+  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
+    probability: .400000006
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

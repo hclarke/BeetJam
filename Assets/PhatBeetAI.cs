@@ -15,13 +15,20 @@ public class PhatBeetAI : MonoBehaviour {
     }
 
 	void Update () {
+        if (!FaceMoveControl.instance) return;
        var hero = FaceMoveControl.instance.transform.position;
        Vector3 dir = hero - transform.position;
+       var pos = transform.position;
        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(dir), TURN_SPEED * Time.deltaTime * 360);
        if (!animation.IsPlaying(clip.name))
-       transform.position += dir.normalized *WALK_SPEED;
+       pos += dir.normalized *WALK_SPEED;
        flailState = animation[clip.name];
        flailState.layer = 999;
+
+       var destOnWater = TileRenderer.OnWaterTile(pos.x, pos.z);
+       if (!destOnWater) {
+           transform.position = pos;
+       }
 	}
 
     void Squishable() {

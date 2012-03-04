@@ -230,8 +230,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a2507da852ea5f46b0e5f35f8ff5dc8, type: 1}
   m_Name: 
-  aggroRange: .600000024
-  shootRange: 1.70000005
+  aggroRange: 1.5
+  shootRange: 2.29999995
   cop: {fileID: 11100000}
   uproot: {fileID: 7400000, guid: e8fef72f98a7fb0429afa0737aa3a42a, type: 2}
   shoot: {fileID: 7400000, guid: ad9264157989c1044a7689d93abf4195, type: 2}
@@ -248,13 +248,16 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8109e41c4f99e6741ba9d19b179c2708, type: 1}
   m_Name: 
+  hits: 0
   tags:
   - beet
   - beetcop
   death_becomes_you: {fileID: 400000, guid: 2d40df00579e46f4db30c120465b63ba, type: 2}
   more_death_becomes_you:
   - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
-    probability: .400000006
+    probability: .300000012
+  - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
+    probability: .300000012
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
