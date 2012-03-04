@@ -22,6 +22,13 @@ public class TileRenderer : MonoBehaviour {
         val = Mathf.Pow(val, 2) - 0.05f;
         return val;
     }
+
+    public static bool OnWaterTile(float x, float y) {
+        var xi = Mathf.RoundToInt(x-0.5f);
+        var yi = Mathf.RoundToInt(y-0.5f);
+        return Height(xi, yi) <= 0f;
+    }
+    
     GameObject GetWater() {
         if (water_pool.Count == 0) {
             var go = waterPrefab.Duplicate();

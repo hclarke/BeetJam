@@ -2803,6 +2803,44 @@ Transform:
   m_Children:
   - {fileID: 1128403820}
   m_Father: {fileID: 1065481835}
+--- !u!1 &2045457077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 2045457078}
+  - 114: {fileID: 2045457079}
+  m_Layer: 0
+  m_Name: Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045457078
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045457077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.7294483, y: 0, z: 6.37427378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &2045457079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045457077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd694412793287c4dbf389cbf50a736a, type: 1}
+  m_Name: 
 --- !u!1 &2054366461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,11 +3005,11 @@ MonoBehaviour:
   - prefab: {fileID: 100006, guid: 757d308568a46ce47b8ace6a8cec0d9e, type: 2}
     weight: 1
   - prefab: {fileID: 100000, guid: fd08a250d83e8dc4e90deb24ead789d1, type: 2}
-    weight: 1
+    weight: 100
   - prefab: {fileID: 100000, guid: 7ff901864683bd440b716ab88a54b0da, type: 2}
     weight: 1
   - prefab: {fileID: 100000, guid: cb55bb76ae4dc6d42bb385916bcb0fa9, type: 2}
-    weight: 100
+    weight: 1
   spawnRadius: 9
   despawnRadius: 18
   magic: .699999988
