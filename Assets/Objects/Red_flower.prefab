@@ -126,7 +126,7 @@ MonoBehaviour:
   tags:
   - plant
   - red_flower
-  death_becomes_you: {fileID: 0}
+  death_becomes_you: {fileID: 400000, guid: 83af911f82c94634182d959e4bbf349b, type: 2}
   more_death_becomes_you:
   - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
     probability: 1
