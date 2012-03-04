@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Player Death Prefab
+  m_Name: PlayerWinEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   fadeTime: 2
   delay2: 1
   tex: {fileID: 2800000, guid: 805275f2609db344cb1a80d686c84666, type: 1}
-  level: Ending
+  level: Winning
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

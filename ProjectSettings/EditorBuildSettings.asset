@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/scene.unity
   - enabled: 1
     path: Assets/Ending.unity
+  - enabled: 1
+    path: Assets/Winning.unity

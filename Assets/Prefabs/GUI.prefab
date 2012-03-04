@@ -903,9 +903,10 @@ MonoBehaviour:
       y: 84
       width: 64
       height: 16
-  health: 16
-  healthJars: 3
+  health: 39
+  healthJars: 10
   deathPrefab: {fileID: 100000, guid: b0e3e118af13c004f8a6204edca4d40d, type: 2}
+  winPrefab: {fileID: 100000, guid: 3283316b635a9f9478cf31b6700d0b2a, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,8 @@ public class EndLevel : MonoBehaviour {
     public float delay2 = 1f;
     public Texture tex;
 
+    public string level;
+
     float fadeAmount = 0;
 	IEnumerator Start () {
         yield return new WaitForSeconds(delay);
@@ -19,7 +21,7 @@ public class EndLevel : MonoBehaviour {
         }
         Fade(1);
         yield return new WaitForSeconds(delay2);
-        Application.LoadLevel(Application.loadedLevel + 1);
+        Application.LoadLevel(level);
 	}
 
     void Fade(float t) {

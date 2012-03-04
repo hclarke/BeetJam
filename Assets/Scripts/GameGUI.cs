@@ -13,6 +13,7 @@ public class GameGUI : MonoBehaviour {
     public int healthJars;
     public static GameGUI instance;
     public GameObject deathPrefab;
+    public GameObject winPrefab;
 
     Dictionary<string, int> killCounts = new Dictionary<string, int>();
 
@@ -22,8 +23,11 @@ public class GameGUI : MonoBehaviour {
         healthJars++;
     }
 
+    bool won;
     void Win() {
-        //TODO: here goes victory
+        if (won) return;
+        won = true;
+        winPrefab.Duplicate(FaceMoveControl.instance.transform.position);
     }
     void Awake() {
         instance = this;
