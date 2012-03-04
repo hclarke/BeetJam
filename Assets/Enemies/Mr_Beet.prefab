@@ -258,7 +258,7 @@ MonoBehaviour:
   death_becomes_you: {fileID: 400000, guid: 2d40df00579e46f4db30c120465b63ba, type: 2}
   more_death_becomes_you:
   - prefab: {fileID: 100000, guid: 53e37750b64aff74cadc41e23d4595f9, type: 2}
-    probability: .200000003
+    probability: .400000006
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
