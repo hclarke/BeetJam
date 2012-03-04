@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   spawnables:
   - prefab: {fileID: 100006, guid: dd527fe51c99a254a858bc938b57090f, type: 2}
-    weight: 1
+    weight: 20
   - prefab: {fileID: 100006, guid: 757d308568a46ce47b8ace6a8cec0d9e, type: 2}
     weight: 1
   - prefab: {fileID: 100000, guid: fd08a250d83e8dc4e90deb24ead789d1, type: 2}

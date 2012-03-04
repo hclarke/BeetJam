@@ -13,8 +13,11 @@ public class FaceMoveControl : MonoBehaviour {
     public bool swimming = false;
     public static bool swinging;
 
+    public static FaceMoveControl instance;
+
 	// Use this for initialization
 	void Start () {
+        instance = this;
         var state = animation[run_clip.name];
         var attack_state = animation[attack.name];
 

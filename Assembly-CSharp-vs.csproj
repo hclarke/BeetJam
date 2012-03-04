@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\BeatBoxAI.cs" />
      <Compile Include="Assets\BeetnickAI.cs" />
+     <Compile Include="Assets\Death.cs" />
      <Compile Include="Assets\Demo.cs" />
      <Compile Include="Assets\FaceMoveControl.cs" />
      <Compile Include="Assets\HammerAttack.cs" />
