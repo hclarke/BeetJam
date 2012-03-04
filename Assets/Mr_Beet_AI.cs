@@ -18,7 +18,7 @@ public class Mr_Beet_AI : MonoBehaviour {
 	
 	private void WalkTorwardDst() {
 		if (dst == null) return;
-		
+        Vector3 pos = transform.position;
 		var d = dst.Value - transform.position;
 		if (d.magnitude > 0) {
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), TURN_SPEED*Time.deltaTime*360);
@@ -28,10 +28,10 @@ public class Mr_Beet_AI : MonoBehaviour {
 		var speed = roarActivated ? RUN_SPEED : WALK_SPEED;
 		var dist = Time.deltaTime * speed * Mathf.Max(0, Vector3.Dot(d, transform.forward));
 		if (d.magnitude <= dist) {
-			transform.position = dst.Value;
+			pos = dst.Value;
 			dst = null;
 		} else {
-			transform.position += dist * transform.forward;
+			pos += dist * transform.forward;
 		}
 		
 		if (dstTimeout != null) {
@@ -42,6 +42,12 @@ public class Mr_Beet_AI : MonoBehaviour {
 				roarActivated = false;
 			}
 		}
+
+        var posx = Mathf.RoundToInt(pos.x-0.5f);
+        var posy = Mathf.RoundToInt(pos.z-0.5f);
+        if (TileRenderer.Height(posx, posy) > 0.01f) {
+            transform.position = pos;
+        }
 	}
 	
 	private void Roar(Vector3 target, int steps) {

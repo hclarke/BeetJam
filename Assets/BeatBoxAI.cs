@@ -23,11 +23,17 @@ public class BeatBoxAI : MonoBehaviour {
         }
 
 		if (unburrowedTime <= 0) {
-			transform.position = new Vector3(transform.position.x, BURROWED_HEIGHT, transform.position.z);
+			pos = new Vector3(transform.position.x, BURROWED_HEIGHT, transform.position.z);
 		} else {
-			transform.position += transform.forward * RAM_SPEED * Time.deltaTime;
+			pos += transform.forward * RAM_SPEED * Time.deltaTime;
 			unburrowedTime -= Time.deltaTime;
 		}
+
+        var posx = Mathf.RoundToInt(pos.x - 0.5f);
+        var posy = Mathf.RoundToInt(pos.z - 0.5f);
+        if (TileRenderer.Height(posx, posy) > 0.01f) {
+            transform.position = pos;
+        }
 	}
 	
 
