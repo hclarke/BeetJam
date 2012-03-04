@@ -8,12 +8,7 @@ public class BeatBoxAI : MonoBehaviour {
 	private const float RAM_TIME = 2.0f;
 	
 	private float unburrowedTime = 0.0f;
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (unburrowedTime <= 0) {

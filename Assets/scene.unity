@@ -238,6 +238,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .00999999978
       objectReference: {fileID: 0}
+    - target: {fileID: 13500000, guid: 0b108e772a12c6942b6f36a994b06bb3, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13500000, guid: 0b108e772a12c6942b6f36a994b06bb3, type: 2}
+      propertyPath: m_Radius
+      value: 8.10999966
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b108e772a12c6942b6f36a994b06bb3, type: 2}
   m_RootGameObject: {fileID: 887733547}
@@ -317,6 +325,7 @@ GameObject:
   - 4: {fileID: 171610814}
   - 114: {fileID: 171610816}
   - 135: {fileID: 171610815}
+  - 54: {fileID: 171610817}
   m_Layer: 0
   m_Name: hitter
   m_TagString: Untagged
@@ -344,10 +353,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 91172189}
   m_GameObject: {fileID: 171610813}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.26999998
+  m_Radius: 8.10999966
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &171610816
 MonoBehaviour:
@@ -360,6 +369,21 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3894e45bbb547b42b110b76a06762bf, type: 1}
   m_Name: 
+--- !u!54 &171610817
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171610813}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &286488465
 GameObject:
   m_ObjectHideFlags: 0

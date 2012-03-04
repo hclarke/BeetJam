@@ -14,7 +14,8 @@ public class BeetnickAI : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
+
 	private void WalkTorwardDst() {
 		if (dst == null) return;
 		

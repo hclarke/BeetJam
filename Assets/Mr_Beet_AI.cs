@@ -14,11 +14,7 @@ public class Mr_Beet_AI : MonoBehaviour {
 	private const float SEARCH_RADIUS = 8.0f;
 	private const float ROAR_RADIUS = 20.0f;
     public AnimationClip run_clip;
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
+
 	
 	private void WalkTorwardDst() {
 		if (dst == null) return;
