@@ -59,6 +59,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Beetnick
   m_TagString: Untagged
@@ -149,7 +150,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .150000006, y: .200000003, z: .150000006}
@@ -193,6 +194,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8109e41c4f99e6741ba9d19b179c2708, type: 1}
   m_Name: 
   death_becomes_you: {fileID: 400000, guid: 2d40df00579e46f4db30c120465b63ba, type: 2}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f265ce422a268e4da57828fabe1b5d7, type: 1}
+  m_Name: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

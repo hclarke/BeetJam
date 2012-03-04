@@ -23,7 +23,7 @@ public class Follow : MonoBehaviour {
         var z = 1f-target.lastSpeed;
         bool doZoom = false;
         if (z < zoom) {
-            zoomtime = 1f;
+            zoomtime = 5f;
             doZoom = true;
         }
         else {
@@ -31,8 +31,12 @@ public class Follow : MonoBehaviour {
             if (zoomtime < 0) {
                 doZoom = true;
             }
+            else {
+                z = Mathf.Min(z, 0.5f);
+            }
+            
         }
-        if (doZoom) {
+        if (true) {
             zoom = Mathf.SmoothDamp(zoom, z, ref zoomv, 0.5f);
         }
         var pos = target.transform.position;

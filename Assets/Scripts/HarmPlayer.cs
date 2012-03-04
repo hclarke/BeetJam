@@ -3,13 +3,15 @@ using System.Collections;
 
 public class HarmPlayer : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    const float hurtDelay = 1.5f;
+    static float nextHurtTime = Mathf.NegativeInfinity;
+
+    void OnTriggerEnter(Collider c) {
+        var go = c.gameObject;
+        if (go.name != "PlayerHitbox") return;
+        if (Time.time > nextHurtTime) {
+            nextHurtTime = Time.time + hurtDelay;
+            GameGUI.instance.Hurt();
+        }
+    }
 }
