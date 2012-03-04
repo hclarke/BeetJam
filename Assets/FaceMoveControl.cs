@@ -11,6 +11,7 @@ public class FaceMoveControl : MonoBehaviour {
     public AnimationClip attack;
     public float animationSpeed = 2f;
     public bool swimming = false;
+    public static bool swinging;
 
 	// Use this for initialization
 	void Start () {
@@ -21,13 +22,21 @@ public class FaceMoveControl : MonoBehaviour {
         attack_state.layer = 999;
         attack_state.speed = 2f;
 	}
-	
 
+    void Update() {
+        if (animation.IsPlaying(attack.name)) {
+            swinging = true;
+        }
+        else {
+            swinging = false;
+        }
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () {
         if (Input.GetButtonDown("Fire1")) {
             animation.Play(attack.name,PlayMode.StopSameLayer);
+
         }
 
 		var dh = Input.GetAxis("Horizontal");
