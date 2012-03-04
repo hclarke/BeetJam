@@ -13,8 +13,11 @@ public class FaceMoveControl : MonoBehaviour {
     public bool swimming = false;
     public static bool swinging;
 
+    public static FaceMoveControl instance;
+
 	// Use this for initialization
 	void Start () {
+        instance = this;
         var state = animation[run_clip.name];
         var attack_state = animation[attack.name];
 
@@ -32,7 +35,8 @@ public class FaceMoveControl : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
+    [HideInInspector]
+    public float lastSpeed;
 	void FixedUpdate () {
         if (Input.GetButtonDown("Fire1")) {
             animation.Play(attack.name,PlayMode.StopSameLayer);
@@ -51,5 +55,7 @@ public class FaceMoveControl : MonoBehaviour {
         else speed *= maxSpeed;
 		transform.position += Time.deltaTime * transform.forward * speed;
         animation.Blend(run_clip.name, speed > 0.1f ? 1 : 0);
+
+        lastSpeed = speed / maxSpeed;
 	}
 }
