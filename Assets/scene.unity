@@ -284,6 +284,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc5cf4276853a14894217d849079255, type: 1}
   m_Name: 
   target: {fileID: 62480143}
+--- !u!1 &171610813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100032, guid: 0b108e772a12c6942b6f36a994b06bb3, type: 2}
+  m_PrefabInternal: {fileID: 91172189}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 171610814}
+  - 114: {fileID: 171610816}
+  - 135: {fileID: 171610815}
+  m_Layer: 0
+  m_Name: hitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &171610814
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400032, guid: 0b108e772a12c6942b6f36a994b06bb3, type: 2}
+  m_PrefabInternal: {fileID: 91172189}
+  m_GameObject: {fileID: 171610813}
+  m_LocalRotation: {x: -.615957081, y: .347270787, z: .615957022, w: .347270727}
+  m_LocalPosition: {x: -18.4529152, y: -15.9351702, z: -14.92628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: -58.8277893, y: -90, z: -180}
+  m_Children: []
+  m_Father: {fileID: 660627329}
+--- !u!135 &171610815
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13500000, guid: 0b108e772a12c6942b6f36a994b06bb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 91172189}
+  m_GameObject: {fileID: 171610813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.26999998
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &171610816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 0b108e772a12c6942b6f36a994b06bb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 91172189}
+  m_GameObject: {fileID: 171610813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3894e45bbb547b42b110b76a06762bf, type: 1}
+  m_Name: 
 --- !u!1 &286488465
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +636,8 @@ Transform:
   m_LocalPosition: {x: -14.4574051, y: -14.5537949, z: -9.60153198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 360, y: -90, z: -180}
-  m_Children: []
+  m_Children:
+  - {fileID: 171610814}
   m_Father: {fileID: 2124409132}
 --- !u!23 &660627330
 Renderer:
@@ -1246,9 +1300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aefb90e336a91b438bd1746ab0e6e73, type: 1}
   m_Name: 
   spawnables:
-  - prefab: {fileID: 100000, guid: de1ca5c15f91e174cb70b19abfb57a6f, type: 2}
-  - prefab: {fileID: 100000, guid: 889268a781e872943b280f5d477346ba, type: 2}
-  - prefab: {fileID: 100000, guid: 4e8b4e4b23a754244964a3d470b95870, type: 2}
+  - prefab: {fileID: 100006, guid: dd527fe51c99a254a858bc938b57090f, type: 2}
+  - prefab: {fileID: 100006, guid: 757d308568a46ce47b8ace6a8cec0d9e, type: 2}
+  - prefab: {fileID: 100000, guid: fd08a250d83e8dc4e90deb24ead789d1, type: 2}
   spawnRadius: 7
   despawnRadius: 10
 --- !u!1 &2090260225

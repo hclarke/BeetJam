@@ -19,6 +19,7 @@ public class FaceMoveControl : MonoBehaviour {
 
         state.speed = animationSpeed;
         attack_state.layer = 999;
+        attack_state.speed = 2f;
 	}
 	
 
