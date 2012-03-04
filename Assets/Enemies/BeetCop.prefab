@@ -61,8 +61,24 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 111: {fileID: 11100000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Beet_Cop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100008
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400008}
+  m_Layer: 0
+  m_Name: GunExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .289999992, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -100,11 +116,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .797496796, z: .76565361}
+  m_LocalPosition: {x: 0, y: .605212152, z: .76565361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360}
   m_Children:
   - {fileID: 400002}
+  - {fileID: 400008}
   m_Father: {fileID: 400006}
 --- !u!4 &400006
 Transform:
@@ -119,6 +136,18 @@ Transform:
   m_Children:
   - {fileID: 400004}
   m_Father: {fileID: 400000}
+--- !u!4 &400008
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.58538198, y: -2.58978915, z: 2.23223805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 400004}
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -180,7 +209,10 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: e8fef72f98a7fb0429afa0737aa3a42a, type: 2}
+  - {fileID: 7400000, guid: a49f82c6305e1a945a21686861f62da0, type: 2}
+  - {fileID: 7400000, guid: ad9264157989c1044a7689d93abf4195, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -198,14 +230,14 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a2507da852ea5f46b0e5f35f8ff5dc8, type: 1}
   m_Name: 
-  aggroRange: 2
-  shootRange: 4
-  cop: {fileID: 0}
-  uproot: {fileID: 0}
-  shoot: {fileID: 0}
-  downroot: {fileID: 0}
-  gun: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  aggroRange: .600000024
+  shootRange: 1.70000005
+  cop: {fileID: 11100000}
+  uproot: {fileID: 7400000, guid: e8fef72f98a7fb0429afa0737aa3a42a, type: 2}
+  shoot: {fileID: 7400000, guid: ad9264157989c1044a7689d93abf4195, type: 2}
+  downroot: {fileID: 7400000, guid: a49f82c6305e1a945a21686861f62da0, type: 2}
+  gun: {fileID: 400008}
+  bulletPrefab: {fileID: 100004, guid: a1450c559aa9fd74dac4769fa10de090, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,6 +262,17 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f265ce422a268e4da57828fabe1b5d7, type: 1}
   m_Name: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598158f75c6b5d14eba7785491aa7725, type: 1}
+  m_Name: 
+  ai: {fileID: 11400000}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

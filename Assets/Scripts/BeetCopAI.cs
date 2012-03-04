@@ -31,7 +31,7 @@ public class BeetCopAI : MonoBehaviour {
         }
     }
 
-    void Shoot() {
+    public void Shoot() {
         var pos = FaceMoveControl.instance.transform.position;
         var rot = Quaternion.LookRotation(pos - transform.position, Vector3.up);
         bulletPrefab.Duplicate(gun.position, rot);
