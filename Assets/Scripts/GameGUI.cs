@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 [ExecuteInEditMode]
 public class GameGUI : MonoBehaviour {
@@ -9,9 +9,10 @@ public class GameGUI : MonoBehaviour {
 
     public GUIKillCount[] killCounters;
     public int health;
-    public int killCount;
 
     public static GameGUI instance;
+
+    Dictionary<string, int> killCounts = new Dictionary<string, int>();
 
     void Awake() {
         instance = this;
@@ -21,6 +22,14 @@ public class GameGUI : MonoBehaviour {
         health--;
         if (health <= 0) {
             Die();
+        }
+    }
+
+    
+    public void Killed(params string[] tags) {
+        foreach (var t in tags) {
+            if (!killCounts.ContainsKey(t)) killCounts[t] = 0;
+            killCounts[t]++;
         }
     }
 
@@ -37,9 +46,11 @@ public class GameGUI : MonoBehaviour {
         GUI.DrawTexture(healthRect, healthTex, ScaleMode.ScaleToFit, true);
 
         foreach (var counter in killCounters) {
-            var content = new GUIContent(killCount.ToString(), counter.icon);
+            int count;
+            if (!killCounts.TryGetValue(counter.name, out count)) count = 0;
+            var content = new GUIContent(count.ToString(), counter.icon);
             GUI.DrawTexture(counter.position, counter.icon, ScaleMode.ScaleToFit, true);
-            style.Draw(counter.textPos, killCount.ToString(), false, false, false, false);
+            style.Draw(counter.textPos, count.ToString(), false, false, false, false);
         }
     }
 }

@@ -18,7 +18,7 @@ public class BeetnickAI : MonoBehaviour {
 
 	private void WalkTorwardDst() {
 		if (dst == null) return;
-		
+        var pos = transform.position;
 		var d = dst.Value - transform.position;
 		if (d.magnitude > 0) {
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), TURN_SPEED*Time.deltaTime*360);
@@ -26,10 +26,10 @@ public class BeetnickAI : MonoBehaviour {
         
 		var dist = Time.deltaTime * WALK_SPEED * d.magnitude;
 		if (d.magnitude <= dist) {
-			transform.position = dst.Value;
+			pos = dst.Value;
 			dst = null;
 		} else {
-			transform.position += dist * transform.forward;
+			pos += dist * transform.forward;
 		}
 		
 		if (dstTimeout != null) {
@@ -39,6 +39,12 @@ public class BeetnickAI : MonoBehaviour {
 				dstTimeout = null;
 			}
 		}
+
+        var posx = Mathf.RoundToInt(pos.x - 0.5f);
+        var posy = Mathf.RoundToInt(pos.z - 0.5f);
+        if (TileRenderer.Height(posx, posy) > 0.01f) {
+            transform.position = pos;
+        }
 	}
 	
 	/// <summary>
