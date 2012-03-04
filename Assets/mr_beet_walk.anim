@@ -12,24 +12,39 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: {x: .0327770263, y: -3.5607467e-05, z: .0443835929, w: .998476744}
-        inSlope: {x: -.50356251, y: .036394693, z: -.818615019, w: .0451791324}
-        outSlope: {x: -.50356251, y: .036394693, z: -.818615019, w: .0451791324}
-        tangentMode: -559038737
-      - time: .216666669
-        value: {x: -.0251092948, y: -.000733159715, z: -.0474935435, w: .998555601}
-        inSlope: {x: .31039235, y: .018918775, z: .611886561, w: .0337439813}
-        outSlope: {x: .31039235, y: .018918775, z: .611886561, w: .0337439813}
-        tangentMode: -559038737
-      - time: .266666681
+      - time: 0
         value: {x: 0, y: 0, z: 0, w: 1}
-        inSlope: {x: .5024454, y: -.00125861808, z: .950609744, w: .0096344864}
-        outSlope: {x: .5024454, y: -.00125861808, z: .950609744, w: .0096344864}
+        inSlope: {x: 0, y: 0, z: .929627419, w: -.00720262481}
+        outSlope: {x: 0, y: 0, z: .929627419, w: -.00720262481}
+        tangentMode: -559038737
+      - time: .100000001
+        value: {x: -1.74150699e-07, y: -1.89318496e-06, z: .0636673942, w: .997971177}
+        inSlope: {x: -1.41696555e-05, y: -.000170518309, z: -.356299967, w: .0217044372}
+        outSlope: {x: -1.41696555e-05, y: -.000170518309, z: -.356299967, w: .0217044372}
+        tangentMode: -559038737
+      - time: .183333337
+        value: {x: -1.13180057e-07, y: 1.99620481e-05, z: -.0336828977, w: .999432564}
+        inSlope: {x: -7.70902698e-05, y: .00150946947, z: -2.36892152, w: -.0936752632}
+        outSlope: {x: -7.70902698e-05, y: .00150946947, z: -2.36892152, w: -.0936752632}
+        tangentMode: -559038737
+      - time: .233333334
+        value: {x: -1.43413918e-05, y: .000107413973, z: -.16005832, w: .987107575}
+        inSlope: {x: -.000281969638, y: .00105686439, z: -1.48361683, w: -.224345356}
+        outSlope: {x: -.000281969638, y: .00105686439, z: -1.48361683, w: -.224345356}
+        tangentMode: -559038737
+      - time: .300000042
+        value: {x: -3.46490583e-06, y: 5.88345101e-05, z: -.0867349133, w: .996231437}
+        inSlope: {x: .000260279165, y: -.00181134534, z: 2.67865896, w: .229430601}
+        outSlope: {x: .000260279165, y: -.00181134534, z: 2.67865896, w: .229430601}
+        tangentMode: -559038737
+      - time: .333333343
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 2.08417041e-05, y: -.00165389269, z: 2.43656707, w: .0494958311}
+        outSlope: {x: 2.08417041e-05, y: -.00165389269, z: 2.43656707, w: .0494958311}
         tangentMode: -559038737
       m_PreInfinity: 2
       m_PostInfinity: 2
-    path: 
+    path: Mr_Beet_body
   m_CompressedRotationCurves: []
   m_PositionCurves:
   - curve:
@@ -37,138 +52,108 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: {x: .129731178, y: .872314453, z: .966290474}
-        inSlope: {x: 0, y: 13.9888992, z: 0}
-        outSlope: {x: 0, y: 13.9888992, z: 0}
+        inSlope: {x: -5.7220459e-05, y: 80.1595688, z: -6.43730164e-06}
+        outSlope: {x: -5.7220459e-05, y: 80.1595688, z: -6.43730164e-06}
         tangentMode: -559038737
-      - time: .0666666701
-        value: {x: .129731178, y: 1.8049078, z: .966290474}
-        inSlope: {x: 0, y: 11.1911201, z: 0}
-        outSlope: {x: 0, y: 11.1911201, z: 0}
+      - time: .0833333358
+        value: {x: .12972641, y: 7.552279, z: .966289937}
+        inSlope: {x: -4.57763672e-05, y: 64.127655, z: -5.00679016e-06}
+        outSlope: {x: -4.57763672e-05, y: 64.127655, z: -5.00679016e-06}
         tangentMode: -559038737
-      - time: .13333334
-        value: {x: .129731178, y: 2.36446381, z: .966290474}
-        inSlope: {x: 0, y: -.174862385, z: 0}
-        outSlope: {x: 0, y: -.174862385, z: 0}
+      - time: .166666672
+        value: {x: .129723549, y: 11.5602579, z: .966289639}
+        inSlope: {x: 7.15257556e-07, y: -1.00199318, z: 1.13686838e-13}
+        outSlope: {x: 7.15257556e-07, y: -1.00199318, z: 1.13686838e-13}
         tangentMode: -559038737
-      - time: .200000003
-        value: {x: .129731178, y: 1.78159285, z: .966290474}
-        inSlope: {x: 0, y: -11.1911221, z: 0}
-        outSlope: {x: 0, y: -11.1911221, z: 0}
+      - time: .25
+        value: {x: .129726529, y: 7.38528061, z: .966289937}
+        inSlope: {x: 4.57763672e-05, y: -64.127655, z: 5.00678971e-06}
+        outSlope: {x: 4.57763672e-05, y: -64.127655, z: 5.00678971e-06}
         tangentMode: -559038737
-      - time: .266666651
+      - time: .333333343
         value: {x: .129731178, y: .872314453, z: .966290474}
-        inSlope: {x: 0, y: -13.6391802, z: 0}
-        outSlope: {x: 0, y: -13.6391802, z: 0}
+        inSlope: {x: 5.57899402e-05, y: -78.1555862, z: 6.43730073e-06}
+        outSlope: {x: 5.57899402e-05, y: -78.1555862, z: 6.43730073e-06}
         tangentMode: -559038737
       m_PreInfinity: 2
       m_PostInfinity: 2
-    path: 
+    path: Mr_Beet_body
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: 5.09573364
-        inSlope: -305.744049
-        outSlope: -305.744049
-        tangentMode: 10
       - time: .0833333358
-        value: 0
-        inSlope: -152.872025
-        outSlope: -152.872025
+        value: 7.51702595
+        inSlope: -163.121689
+        outSlope: -163.121689
         tangentMode: 10
-      - time: .116666667
-        value: 0
-        inSlope: -36.9979248
-        outSlope: -36.9979248
+      - time: .25
+        value: -19.6699219
+        inSlope: 29.5393219
+        outSlope: 29.5393219
         tangentMode: 10
-      - time: .200000003
-        value: -6.1663208
-        inSlope: 9.24947357
-        outSlope: 9.24947357
-        tangentMode: 10
-      - time: .266666681
-        value: 0
-        inSlope: 92.4947968
-        outSlope: 92.4947968
+      - time: .316666663
+        value: -4.85656738
+        inSlope: 222.200333
+        outSlope: 222.200333
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalEulerAnglesHint.z
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: .162979126
-        inSlope: -9.77874851
-        outSlope: -9.77874851
-        tangentMode: 10
       - time: .0833333358
         value: 0
-        inSlope: -4.88937426
-        outSlope: -4.88937426
+        inSlope: .0800170973
+        outSlope: .0800170973
         tangentMode: 10
-      - time: .116666667
-        value: 0
-        inSlope: .420227051
-        outSlope: .420227051
+      - time: .25
+        value: .0133361816
+        inSlope: -.0352935828
+        outSlope: -.0352935828
         tangentMode: 10
-      - time: .200000003
-        value: .0700378418
-        inSlope: -.105056703
-        outSlope: -.105056703
-        tangentMode: 10
-      - time: .266666681
-        value: 0
-        inSlope: -1.05056751
-        outSlope: -1.05056751
+      - time: .316666663
+        value: .00329589844
+        inSlope: -.150604263
+        outSlope: -.150604263
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalEulerAnglesHint.y
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: 3.75311375
-        inSlope: -343.600983
-        outSlope: -343.600983
-        tangentMode: 10
       - time: .0833333358
-        value: -1.97356904
-        inSlope: -110.253128
-        outSlope: -110.253128
-        tangentMode: 10
-      - time: .116666667
-        value: 2.1295886
-        inSlope: 29.4831543
-        outSlope: 29.4831543
-        tangentMode: 10
-      - time: .200000003
-        value: -3.21444702
-        inSlope: -7.95586395
-        outSlope: -7.95586395
-        tangentMode: 10
-      - time: .266666681
         value: 0
-        inSlope: 48.2166977
-        outSlope: 48.2166977
+        inSlope: .00265502953
+        outSlope: .00265502953
+        tangentMode: 10
+      - time: .25
+        value: .000442504883
+        inSlope: -.00153350842
+        outSlope: -.00153350842
+        tangentMode: 10
+      - time: .316666663
+        value: 6.10351562e-05
+        inSlope: -.00572204636
+        outSlope: -.00572204636
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalEulerAnglesHint.x
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   m_SampleRate: 60
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -178,33 +163,33 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: .129731178
-        inSlope: 0
-        outSlope: 0
+        inSlope: -5.7220459e-05
+        outSlope: -5.7220459e-05
         tangentMode: 10
-      - time: .0666666701
-        value: .129731178
-        inSlope: 0
-        outSlope: 0
+      - time: .0833333358
+        value: .12972641
+        inSlope: -4.57763672e-05
+        outSlope: -4.57763672e-05
         tangentMode: 10
-      - time: .13333334
-        value: .129731178
-        inSlope: 0
-        outSlope: 0
+      - time: .166666672
+        value: .129723549
+        inSlope: 7.15257556e-07
+        outSlope: 7.15257556e-07
         tangentMode: 10
-      - time: .200000003
-        value: .129731178
-        inSlope: 0
-        outSlope: 0
+      - time: .25
+        value: .129726529
+        inSlope: 4.57763672e-05
+        outSlope: 4.57763672e-05
         tangentMode: 10
-      - time: .266666651
+      - time: .333333343
         value: .129731178
-        inSlope: 0
-        outSlope: 0
+        inSlope: 5.57899402e-05
+        outSlope: 5.57899402e-05
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.x
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -212,33 +197,33 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: .872314453
-        inSlope: 13.9888992
-        outSlope: 13.9888992
+        inSlope: 80.1595688
+        outSlope: 80.1595688
         tangentMode: 10
-      - time: .0666666701
-        value: 1.8049078
-        inSlope: 11.1911201
-        outSlope: 11.1911201
+      - time: .0833333358
+        value: 7.552279
+        inSlope: 64.127655
+        outSlope: 64.127655
         tangentMode: 10
-      - time: .13333334
-        value: 2.36446381
-        inSlope: -.174862385
-        outSlope: -.174862385
+      - time: .166666672
+        value: 11.5602579
+        inSlope: -1.00199318
+        outSlope: -1.00199318
         tangentMode: 10
-      - time: .200000003
-        value: 1.78159285
-        inSlope: -11.1911221
-        outSlope: -11.1911221
+      - time: .25
+        value: 7.38528061
+        inSlope: -64.127655
+        outSlope: -64.127655
         tangentMode: 10
-      - time: .266666651
+      - time: .333333343
         value: .872314453
-        inSlope: -13.6391802
-        outSlope: -13.6391802
+        inSlope: -78.1555862
+        outSlope: -78.1555862
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.y
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -246,304 +231,364 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: .966290474
-        inSlope: 0
-        outSlope: 0
+        inSlope: -6.43730164e-06
+        outSlope: -6.43730164e-06
         tangentMode: 10
-      - time: .0666666701
-        value: .966290474
-        inSlope: 0
-        outSlope: 0
+      - time: .0833333358
+        value: .966289937
+        inSlope: -5.00679016e-06
+        outSlope: -5.00679016e-06
         tangentMode: 10
-      - time: .13333334
-        value: .966290474
-        inSlope: 0
-        outSlope: 0
+      - time: .166666672
+        value: .966289639
+        inSlope: 1.13686838e-13
+        outSlope: 1.13686838e-13
         tangentMode: 10
-      - time: .200000003
-        value: .966290474
-        inSlope: 0
-        outSlope: 0
+      - time: .25
+        value: .966289937
+        inSlope: 5.00678971e-06
+        outSlope: 5.00678971e-06
         tangentMode: 10
-      - time: .266666651
+      - time: .333333343
         value: .966290474
-        inSlope: 0
-        outSlope: 0
+        inSlope: 6.43730073e-06
+        outSlope: 6.43730073e-06
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.z
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: 5.09573364
-        inSlope: -305.744049
-        outSlope: -305.744049
-        tangentMode: 10
       - time: .0833333358
-        value: 0
-        inSlope: -152.872025
-        outSlope: -152.872025
+        value: 7.51702595
+        inSlope: -163.121689
+        outSlope: -163.121689
         tangentMode: 10
-      - time: .116666667
-        value: 0
-        inSlope: -36.9979248
-        outSlope: -36.9979248
+      - time: .25
+        value: -19.6699219
+        inSlope: 29.5393219
+        outSlope: 29.5393219
         tangentMode: 10
-      - time: .200000003
-        value: -6.1663208
-        inSlope: 9.24947357
-        outSlope: 9.24947357
-        tangentMode: 10
-      - time: .266666681
-        value: 0
-        inSlope: 92.4947968
-        outSlope: 92.4947968
+      - time: .316666663
+        value: -4.85656738
+        inSlope: 222.200333
+        outSlope: 222.200333
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalEulerAnglesHint.z
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: .162979126
-        inSlope: -9.77874851
-        outSlope: -9.77874851
-        tangentMode: 10
       - time: .0833333358
         value: 0
-        inSlope: -4.88937426
-        outSlope: -4.88937426
+        inSlope: .0800170973
+        outSlope: .0800170973
         tangentMode: 10
-      - time: .116666667
-        value: 0
-        inSlope: .420227051
-        outSlope: .420227051
+      - time: .25
+        value: .0133361816
+        inSlope: -.0352935828
+        outSlope: -.0352935828
         tangentMode: 10
-      - time: .200000003
-        value: .0700378418
-        inSlope: -.105056703
-        outSlope: -.105056703
-        tangentMode: 10
-      - time: .266666681
-        value: 0
-        inSlope: -1.05056751
-        outSlope: -1.05056751
+      - time: .316666663
+        value: .00329589844
+        inSlope: -.150604263
+        outSlope: -.150604263
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalEulerAnglesHint.y
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: 3.75311375
-        inSlope: -343.600983
-        outSlope: -343.600983
-        tangentMode: 10
       - time: .0833333358
-        value: -1.97356904
-        inSlope: -110.253128
-        outSlope: -110.253128
-        tangentMode: 10
-      - time: .116666667
-        value: 2.1295886
-        inSlope: 29.4831543
-        outSlope: 29.4831543
-        tangentMode: 10
-      - time: .200000003
-        value: -3.21444702
-        inSlope: -7.95586395
-        outSlope: -7.95586395
-        tangentMode: 10
-      - time: .266666681
         value: 0
-        inSlope: 48.2166977
-        outSlope: 48.2166977
+        inSlope: .00265502953
+        outSlope: .00265502953
+        tangentMode: 10
+      - time: .25
+        value: .000442504883
+        inSlope: -.00153350842
+        outSlope: -.00153350842
+        tangentMode: 10
+      - time: .316666663
+        value: 6.10351562e-05
+        inSlope: -.00572204636
+        outSlope: -.00572204636
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalEulerAnglesHint.x
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: .0327770263
-        inSlope: -.50356251
-        outSlope: -.50356251
-        tangentMode: 0
-      - time: .216666669
-        value: -.0251092948
-        inSlope: .31039235
-        outSlope: .31039235
-        tangentMode: 0
-      - time: .266666681
+      - time: 0
         value: 0
-        inSlope: .5024454
-        outSlope: .5024454
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: .100000001
+        value: -1.74150699e-07
+        inSlope: -1.41696555e-05
+        outSlope: -1.41696555e-05
+        tangentMode: 0
+      - time: .183333337
+        value: -1.13180057e-07
+        inSlope: -7.70902698e-05
+        outSlope: -7.70902698e-05
+        tangentMode: 0
+      - time: .233333334
+        value: -1.43413918e-05
+        inSlope: -.000281969638
+        outSlope: -.000281969638
+        tangentMode: 0
+      - time: .300000042
+        value: -3.46490583e-06
+        inSlope: .000260279165
+        outSlope: .000260279165
+        tangentMode: 0
+      - time: .333333343
+        value: 0
+        inSlope: 2.08417041e-05
+        outSlope: 2.08417041e-05
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalRotation.x
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: -3.5607467e-05
-        inSlope: .036394693
-        outSlope: .036394693
-        tangentMode: 0
-      - time: .216666669
-        value: -.000733159715
-        inSlope: .018918775
-        outSlope: .018918775
-        tangentMode: 0
-      - time: .266666681
+      - time: 0
         value: 0
-        inSlope: -.00125861808
-        outSlope: -.00125861808
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: .100000001
+        value: -1.89318496e-06
+        inSlope: -.000170518309
+        outSlope: -.000170518309
+        tangentMode: 0
+      - time: .183333337
+        value: 1.99620481e-05
+        inSlope: .00150946947
+        outSlope: .00150946947
+        tangentMode: 0
+      - time: .233333334
+        value: .000107413973
+        inSlope: .00105686439
+        outSlope: .00105686439
+        tangentMode: 0
+      - time: .300000042
+        value: 5.88345101e-05
+        inSlope: -.00181134534
+        outSlope: -.00181134534
+        tangentMode: 0
+      - time: .333333343
+        value: 0
+        inSlope: -.00165389269
+        outSlope: -.00165389269
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalRotation.y
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: .0443835929
-        inSlope: -.818615019
-        outSlope: -.818615019
-        tangentMode: 0
-      - time: .216666669
-        value: -.0474935435
-        inSlope: .611886561
-        outSlope: .611886561
-        tangentMode: 0
-      - time: .266666681
+      - time: 0
         value: 0
-        inSlope: .950609744
-        outSlope: .950609744
+        inSlope: .929627419
+        outSlope: .929627419
+        tangentMode: 0
+      - time: .100000001
+        value: .0636673942
+        inSlope: -.356299967
+        outSlope: -.356299967
+        tangentMode: 0
+      - time: .183333337
+        value: -.0336828977
+        inSlope: -2.36892152
+        outSlope: -2.36892152
+        tangentMode: 0
+      - time: .233333334
+        value: -.16005832
+        inSlope: -1.48361683
+        outSlope: -1.48361683
+        tangentMode: 0
+      - time: .300000042
+        value: -.0867349133
+        inSlope: 2.67865896
+        outSlope: 2.67865896
+        tangentMode: 0
+      - time: .333333343
+        value: 0
+        inSlope: 2.43656707
+        outSlope: 2.43656707
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalRotation.z
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: .998476744
-        inSlope: .0451791324
-        outSlope: .0451791324
-        tangentMode: 0
-      - time: .216666669
-        value: .998555601
-        inSlope: .0337439813
-        outSlope: .0337439813
-        tangentMode: 0
-      - time: .266666681
+      - time: 0
         value: 1
-        inSlope: .0096344864
-        outSlope: .0096344864
+        inSlope: -.00720262481
+        outSlope: -.00720262481
+        tangentMode: 0
+      - time: .100000001
+        value: .997971177
+        inSlope: .0217044372
+        outSlope: .0217044372
+        tangentMode: 0
+      - time: .183333337
+        value: .999432564
+        inSlope: -.0936752632
+        outSlope: -.0936752632
+        tangentMode: 0
+      - time: .233333334
+        value: .987107575
+        inSlope: -.224345356
+        outSlope: -.224345356
+        tangentMode: 0
+      - time: .300000042
+        value: .996231437
+        inSlope: .229430601
+        outSlope: .229430601
+        tangentMode: 0
+      - time: .333333343
+        value: 1
+        inSlope: .0494958311
+        outSlope: .0494958311
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalRotation.w
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: 3.75311375
-        inSlope: -52.2264977
-        outSlope: -52.2264977
-        tangentMode: 10
-      - time: .200000003
-        value: -3.2104187
-        inSlope: -2.03511238
-        outSlope: -2.03511238
-        tangentMode: 10
-      - time: .266666681
+      - time: 0
         value: 0
-        inSlope: 48.1562729
-        outSlope: 48.1562729
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .0833333358
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: 0
+        inSlope: .00228881859
+        outSlope: .00228881859
+        tangentMode: 10
+      - time: .25
+        value: .000381469727
+        inSlope: 4.65661287e-10
+        outSlope: 4.65661287e-10
+        tangentMode: 10
+      - time: .333333343
+        value: 0
+        inSlope: -.00457763625
+        outSlope: -.00457763625
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: localEulerAnglesBaked.x
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: .162979126
-        inSlope: -.708961546
-        outSlope: -.708961546
-        tangentMode: 10
-      - time: .200000003
-        value: .0684509277
-        inSlope: -.867862701
-        outSlope: -.867862701
-        tangentMode: 10
-      - time: .266666681
+      - time: 0
         value: 0
-        inSlope: -1.0267638
-        outSlope: -1.0267638
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .0833333358
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: 0
+        inSlope: .0816650465
+        outSlope: .0816650465
+        tangentMode: 10
+      - time: .25
+        value: .0136108398
+        inSlope: 1.49011612e-08
+        outSlope: 1.49011612e-08
+        tangentMode: 10
+      - time: .333333343
+        value: 0
+        inSlope: -.163330063
+        outSlope: -.163330063
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: localEulerAnglesBaked.y
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: .0666666701
-        value: 5.09573364
-        inSlope: -84.4059067
-        outSlope: -84.4059067
-        tangentMode: 10
-      - time: .200000003
-        value: -6.15838623
-        inSlope: 3.98493576
-        outSlope: 3.98493576
-        tangentMode: 10
-      - time: .266666681
+      - time: 0
         value: 0
-        inSlope: 92.3757782
-        outSlope: 92.3757782
+        inSlope: 91.8376923
+        outSlope: 91.8376923
+        tangentMode: 10
+      - time: .0833333358
+        value: 7.65314102
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: 0
+        inSlope: -166.301178
+        outSlope: -166.301178
+        tangentMode: 10
+      - time: .25
+        value: -20.0637207
+        inSlope: -2.28881836e-05
+        outSlope: -2.28881836e-05
+        tangentMode: 10
+      - time: .333333343
+        value: 0
+        inSlope: 240.764618
+        outSlope: 240.764618
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: localEulerAnglesBaked.z
-    path: 
+    path: Mr_Beet_body
     classID: 4
     script: {fileID: 0}
   m_Events: []

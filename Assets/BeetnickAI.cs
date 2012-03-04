@@ -6,7 +6,7 @@ using System.Linq;
 public class BeetnickAI : MonoBehaviour {
 	Vector3? dst = null;
 	float? dstTimeout = null;
-	private const float WALK_SPEED = 0.05f;
+	private const float WALK_SPEED = 0.002f;
 	private const float TURN_SPEED = 0.4f;
 	private const float SEARCH_RADIUS = 20.0f;
 
