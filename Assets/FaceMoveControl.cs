@@ -37,8 +37,13 @@ public class FaceMoveControl : MonoBehaviour {
 	}
 
     void Update() {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1") && !swimming) {
             animation.Play(attack.name, PlayMode.StopSameLayer);
+        }
+
+        if (Input.GetButtonDown("Fire2")) {
+            damaging = false;
+            animation[attack.name].normalizedTime = 1f;
         }
 
         if (animation.IsPlaying(attack.name)) {
@@ -47,29 +52,19 @@ public class FaceMoveControl : MonoBehaviour {
         else {
             swinging = false;
         }
-        
-    }
 
-    [HideInInspector]
-    public float lastSpeed;
+        var dh = Input.GetAxis("Horizontal");
+        var dv = Input.GetAxis("Vertical");
 
-    float idlev;
-
-	void FixedUpdate () {
-        
-
-		var dh = Input.GetAxis("Horizontal");
-		var dv = Input.GetAxis("Vertical");
-		
-		var d = Vector3.ClampMagnitude(new Vector3(dh, 0, dv), 1);
-		if (d.magnitude > 0) {
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), turnSpeed*Time.deltaTime*360);
-		}
+        var d = Vector3.ClampMagnitude(new Vector3(dh, 0, dv), 1);
+        if (d.magnitude > 0) {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(d), turnSpeed * Time.deltaTime * 360);
+        }
         var speed = Mathf.Max(0, Vector3.Dot(d, transform.forward));
         if (swimming) speed *= swimSpeed;
         else speed *= maxSpeed;
         if (!swinging)
-		transform.position += Time.deltaTime * transform.forward * speed;
+            transform.position += Time.deltaTime * transform.forward * speed;
         animation.Blend(run_clip.name, speed > 0.1f ? 1 : 0);
 
         lastSpeed = speed / maxSpeed;
@@ -83,5 +78,17 @@ public class FaceMoveControl : MonoBehaviour {
         else {
             animation.Blend(idle.name, 0, 0.05f);
         }
+        
+    }
+
+    [HideInInspector]
+    public float lastSpeed;
+
+    float idlev;
+
+	void FixedUpdate () {
+        
+
+		
 	}
 }
