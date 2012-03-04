@@ -2358,6 +2358,8 @@ MonoBehaviour:
     weight: 1
   - prefab: {fileID: 100000, guid: 7ff901864683bd440b716ab88a54b0da, type: 2}
     weight: 1
+  - prefab: {fileID: 100000, guid: cb55bb76ae4dc6d42bb385916bcb0fa9, type: 2}
+    weight: 100
   spawnRadius: 9
   despawnRadius: 18
   magic: .699999988
