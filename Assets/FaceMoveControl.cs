@@ -12,6 +12,7 @@ public class FaceMoveControl : MonoBehaviour {
     public float animationSpeed = 2f;
     public bool swimming = false;
     public static bool swinging;
+    public static bool damaging;
 
     public static FaceMoveControl instance;
 
@@ -40,7 +41,6 @@ public class FaceMoveControl : MonoBehaviour {
 	void FixedUpdate () {
         if (Input.GetButtonDown("Fire1")) {
             animation.Play(attack.name,PlayMode.StopSameLayer);
-
         }
 
 		var dh = Input.GetAxis("Horizontal");
@@ -53,6 +53,7 @@ public class FaceMoveControl : MonoBehaviour {
         var speed = Mathf.Max(0, Vector3.Dot(d, transform.forward));
         if (swimming) speed *= swimSpeed;
         else speed *= maxSpeed;
+        if (!swinging)
 		transform.position += Time.deltaTime * transform.forward * speed;
         animation.Blend(run_clip.name, speed > 0.1f ? 1 : 0);
 

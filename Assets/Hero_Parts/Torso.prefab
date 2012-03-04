@@ -58,6 +58,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 111: {fileID: 11100000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -316,7 +317,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.777573, y: 17.0951843, z: -237.482162}
+  m_LocalPosition: {x: -25.3214169, y: -.494120777, z: -1.00921929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -697,6 +698,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3894e45bbb547b42b110b76a06762bf, type: 1}
+  m_Name: 
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681ad2eb99daf27469d44f3b87f77c97, type: 1}
   m_Name: 
 --- !u!135 &13500000
 SphereCollider:

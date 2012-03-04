@@ -4,7 +4,7 @@ using System.Collections;
 public class HammerAttack : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
-        if (FaceMoveControl.swinging) {
+        if (FaceMoveControl.damaging) {
             other.SendMessage("Squishable", SendMessageOptions.DontRequireReceiver);
         }
     }
