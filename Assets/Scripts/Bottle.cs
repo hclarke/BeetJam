@@ -8,5 +8,6 @@ public class Bottle : MonoBehaviour {
         if (go.name != "PlayerHitbox") return;
         GameGUI.instance.AddBottle();
         Destroy(gameObject);
+		Debug.Log("Testing out githibs git client");
     }
 }
