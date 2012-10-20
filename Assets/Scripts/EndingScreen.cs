@@ -11,7 +11,6 @@ public class EndingScreen : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Fire2")) {
-		
             Application.LoadLevel(1);
         }
 	}
